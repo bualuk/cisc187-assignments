@@ -1,2 +1,6 @@
-# cisc187-assignments
-Labs and projects due for CISC187
+# CISC187 assignments
+Welcome to CISC 187!
+
+All labs and projects are completed within this repository.
+
+
