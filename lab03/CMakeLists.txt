@@ -5,7 +5,7 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 project(lab3 VERSION 1.0.0 LANGUAGES CXX)
-include ("../cmake.txt")
+include ("../common.cmake")
 
 add_subdirectory(src)
 add_subdirectory(test)

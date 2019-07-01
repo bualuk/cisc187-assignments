@@ -6,6 +6,6 @@ endif()
 
 project(test_cases VERSION 1.0.0 LANGUAGES CXX)
 
-make_test(test_change test_change.cpp) 
+make_test(test_change) 
 
 

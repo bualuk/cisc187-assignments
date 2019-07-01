@@ -6,7 +6,7 @@ endif()
 
 project(test_cases VERSION 1.0.0 LANGUAGES CXX)
 
-make_test(step2 step2.cpp) 
-make_test(step3 step3.cpp) 
-make_test(step4 step4.cpp) 
+make_test(step2) 
+make_test(step3) 
+make_test(step4) 
 
