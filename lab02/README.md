@@ -17,13 +17,13 @@ describe what [this function](src/change.cpp) is attempting to do:
 
 2. Work through the logic manually (without compiling). 
 
-Write down the expected output.
+Write down the expected return value.
 
 
 
 
 3. Compile and run the `test_change` program on buffy.
-   Record the output.
+   What values are actually returned?
 
 
 
