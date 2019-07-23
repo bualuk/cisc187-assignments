@@ -23,7 +23,7 @@ Think about what you will need to do to avoid an infinite loop.
 ## Steps
 
 ### 1. Create files
-Create the file `src/lab15.h`
+Create the files `lab15.h` and `main.cpp`.
 
 In the steps that follow, place all code in the `mesa` namespace
 unless otherwise noted.

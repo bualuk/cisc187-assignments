@@ -5,8 +5,6 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 project(lab15 VERSION 1.0.0 LANGUAGES CXX)
-include ("../common.cmake")
 
-add_subdirectory(src)
-add_subdirectory(test)
+add_executable(main main.cpp)
 
