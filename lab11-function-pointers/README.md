@@ -29,7 +29,7 @@ and returns a `bool`.
 ### 3. Function `is_odd`
 Write the predicate 
 
-````cpp 
+```cpp 
 constexpr bool mesa::is_odd(long value)
 ```
 
