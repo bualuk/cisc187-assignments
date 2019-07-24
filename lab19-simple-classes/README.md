@@ -61,6 +61,9 @@ Create a `Dog` class from the following `struct`:
   - `MEDIUM` dogs return "Ruff"
   - `SMALL` dogs return "Yip"
 
+## Try this!
+Consider writing a main that uses these classes.
+
 ## Turnitin
 Check your progress by running `make test` or `ctest -V`.
 This will attempt to run all tests.
