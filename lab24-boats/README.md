@@ -1,6 +1,8 @@
 # Boat inheritance
 The goal of this lab is to practice working with inheritance.
 
+This lab is adapted from the Pool Puzzle in 'Head First Java, O'Reilly Media; 2nd edition, p. 194.
+
 Use the following code snippets and place them in the provided classes 
 where there are underscores in the code.
 
