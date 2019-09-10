@@ -25,16 +25,27 @@ what declarations and defintions belong in the `.h` file and
 belong in the `.cpp` file.
 
 ### 2. Overload function abs
-Create function overloads for the function `mesa::abs`.
+Create `constexpr` function overloads for the function `mesa::abs`.
 Implement all the overloads in `abs.h`.
 
-The `int` overload has been created for you.
+The `int` overload has been created for you:
+
+```
+constexpr
+  int abs (const int value) {
+    return value<0? -value: value;
+  }
+```
+
+In C++11, a `constexpr` function may contain 
+only a return statement.
+The ternary operator counts as a single line.
 
 Create overloads for the following types:
 
 - `unsigned`
 - `unsigned char`
-- `int`
+- `int` (provided)
 - `long`
 - `double`
 - `long long`
@@ -47,11 +58,6 @@ Implement a `constexpr` function template for `abs`.
 So that you can compile and run both the overload versions
 and the template version, implement the template version
 in the `lab7` file.
-
-**Hint:** 
-In C++11, a `constexpr` function may contain 
-only a return statement.
-Use the ternary operator, which counts as a single line.
 
 ### 4. struct point and `operator==()`
 When creating even simple user defined types,
@@ -88,6 +94,14 @@ Implement a point overload for the stream extraction operator: `operator<<`:
 ```cpp
 std::ostream& operator<<(std::ostream&, const mesa::point&);
 ```
+
+The output stream should enclose the point in square brackets and separate the values with a comma.
+Do not add a newline character or line feed, for example if the `x` value is 2 and the `y` value is 3, then
+
+```
+[2,3]
+```
+should be returned from this function.
 
 This overload is useful if you want to send your type
 to standard output (`std::cout`), save it to a file,
