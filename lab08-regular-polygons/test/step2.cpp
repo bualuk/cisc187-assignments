@@ -7,14 +7,15 @@
 SCENARIO( "Compute the area of a circle") {
 
   GIVEN( "a circle of radius > 0" ) {
+    constexpr double mesa_test_pi = 3.1415926535897932384626433832795;
     WHEN( "1 is provided" ) {
       THEN( "PI should be returned" ) {
-        REQUIRE( mesa::area(1) == doctest::Approx(M_PI));
+        REQUIRE( mesa::area(1) == doctest::Approx(mesa_test_pi));
       }
     }
     WHEN( "2 is provided" ) {
       THEN( "4*PI should be returned" ) {
-        CHECK( mesa::area(2) == doctest::Approx(4.*M_PI));
+        CHECK( mesa::area(2) == doctest::Approx(4.*mesa_test_pi));
       }
     }
     WHEN( "8.5 is provided" ) {
