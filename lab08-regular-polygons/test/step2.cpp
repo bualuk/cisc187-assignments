@@ -4,6 +4,20 @@
 #include <doctest.h>
 #include "../src/lab8.h"
 
+SCENARIO( "Verify area is constexpr") {
+  GIVEN( "a valid circle" ) {
+    constexpr double mesa_test_pi = 3.1415926535897932384626433832795;
+    WHEN( "the function is called" ) {
+      THEN( "the return value can be assigned to a constexpr variable" ) {
+        constexpr double result = mesa::area(1);
+        // a test is redundant, but silences a warning
+        // This is really a compiler test
+        REQUIRE( result == doctest::Approx(mesa_test_pi));
+      }
+    }
+  }
+}
+
 SCENARIO( "Compute the area of a circle") {
 
   GIVEN( "a circle of radius > 0" ) {
