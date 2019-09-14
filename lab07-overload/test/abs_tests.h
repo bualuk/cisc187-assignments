@@ -4,6 +4,37 @@
 // step 2 uses overloads
 // step 3 uses a template
 
+SCENARIO( "Verify mesa::abs is constexpr") {
+  GIVEN( "a valid input" ) {
+    WHEN( "the function is called" ) {
+
+      THEN( "an int returned can be assigned to a constexpr " ) {
+        constexpr int actual = mesa::abs(1);
+        // a test is redundant, but silences a warning
+        // This is really a compiler test
+        REQUIRE( actual == 1);
+      }
+
+      AND_THEN( "a char returned can be assigned to a constexpr " ) {
+        constexpr char actual = mesa::abs(45);
+        REQUIRE( actual == 45);
+      }
+
+      AND_THEN( "a double returned can be assigned to a constexpr " ) {
+        constexpr double actual = mesa::abs(1.0);
+        REQUIRE( actual == 1);
+      }
+
+      AND_THEN( "a long double returned can be assigned to a constexpr " ) {
+        constexpr long double long_double_value = 3.14e88;
+        constexpr long double actual = mesa::abs(long_double_value);
+        REQUIRE( actual == long_double_value);
+      }
+
+    }
+  }
+}
+
 SCENARIO( "take the absolute value of a number") {
 
   GIVEN( "signed integral types" ) {
