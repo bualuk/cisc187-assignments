@@ -6,7 +6,8 @@ Define all of the types in the `namespace` mesa.
 ## Steps
 
 ### 1. Create files
-Create the files `point.h`, `mouse.h`, and `mouse.cpp`.
+Create the files `point.h`, `mouse.h`, `mouse.cpp`,
+and `main.cpp`.
 
 ### 2. Scoped enum
 Define a scoped `enum` named `direction` in file `mouse.h`.

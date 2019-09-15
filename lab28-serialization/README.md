@@ -13,8 +13,7 @@ including C, C++, C#, Java, JavaScript, Perl, and Python.
 This lab uses a popular json serialization library
 that may become part of the STL one day.
 Documentation for the library is here:
-
-    https://nlohmann.github.io/json/
+https://nlohmann.github.io/json/
 
 
 ## Steps
