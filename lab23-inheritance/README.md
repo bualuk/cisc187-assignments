@@ -8,6 +8,46 @@ Answer all questions in this file.
 
 ## 1. Base and derived classes: 30 minutes *maximum*
 ### Part a.
+Given the following classes:    
+```cpp
+  class Animal {
+    public:
+    virtual void make_noise() {}
+    void eat() {}
+    void sleep() {}
+    void roam() {}
+  };
+
+  class Canine : public Animal {
+    public:
+    void roam() {}
+    void eat() {}
+  };
+
+
+  class Wolf : public Canine {
+    public:
+    void make_noise() {}
+    void eat() {}
+
+  };
+```
+
+And given:    
+```cpp
+  void call (Animal& a) {
+    a.make_noise();
+    a.roam();
+    a.eat();
+    a.sleep();
+  }
+
+  int main () {
+    Wolf w;
+    call(w);
+  }
+```
+
 Identify which of the versions of the methods called by `Wolf w` are invoked.
 
 ### Part b.
@@ -26,7 +66,7 @@ ConcertPianist
 - Draw an inheritance diagram that makes sense.  
   Not everything needs to be connected to something else.
 
-  Don't over engineer this diagram.
+  *Don't* over engineer this diagram.
   Simple ASCII art like:
 
   ```
@@ -53,6 +93,7 @@ Given the following classes:
 Identify the relationships that make sense.
 
 If a relationship doesn't make sense, explain why.
+The first is done for you.
 
 ```cpp
 struct Base : Derived       // no. Relationship is backwards.
@@ -127,8 +168,8 @@ For each, answer the following:
 
 - For those that compile,
   but do not produce the output above, 
-  tell me what they **do** output, and
-  explain why they do not produce the desired results.
+  tell me what they **do output**, and
+  **explain why** they do not produce the desired results.
 
 ### Pair #1:
 **A:**  
