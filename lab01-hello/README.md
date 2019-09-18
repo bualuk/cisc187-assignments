@@ -127,15 +127,21 @@ Select the documentation for your version of Visual Studio.
    Leave the radio selections alone and
    press 'Finish` when done.
 
-   Don't worry (yet) if you see any warnings or errors.
+   Campus windows computers may complain about a `sh.exe` program in your path
+   outside of CodeBlocks.
+   To fix this error:
+
+   - Delete the CMake variable `CMAKE_SH` in the variables list.
+   - Press 'Configure' a second time.
+
 5. Press 'Generate'. When finished ("Generating done")
    close CMake GUI.
-6. Open the generated "CBP" file in CodeBlocks
+6. Open the generated "CBP" file in CodeBlocks.
+   It should be in the build folder you pointed at in step 3.
 
-Build 'all' to compile and link att programs and tests.
+Build the 'all' target to compile and link programs and tests.
 Test cases must be run individually - 
 there is no target to run all the tests.
-
 
 ### MacOS Xcode
 Open a terminal in this directory, then:
