@@ -16,17 +16,17 @@ SCENARIO( "Count values mathcing a predicate") {
     std::vector<int> x = {0,2,4,6,8,1,3,5,7,9};
     WHEN( "the entire array is examined for evens" ) {
       THEN( "count_if should return 5" ) {
-        REQUIRE( mesa::count_if(&x[0], &x[x.size()], is_even) == 5);
+        REQUIRE( mesa::count_if(x.begin(), x.end(), is_even) == 5);
       }
     }
     WHEN( "the entire array is examined for values > 7" ) {
       THEN( "count_if should return 2" ) {
-        REQUIRE( mesa::count_if(&x[0], &x[x.size()], gt_7) == 2);
+        REQUIRE( mesa::count_if(x.begin(), x.end(), gt_7) == 2);
       }
     }
     WHEN( "the part of array is examined for values >= 6" ) {
       THEN( "count_if should return 0" ) {
-        REQUIRE( mesa::count_if(&x[3], &x[x.size()], gt_6) == 4);
+        REQUIRE( mesa::count_if(x.begin()+3, x.end(), gt_6) == 4);
       }
     }
   }
@@ -34,13 +34,13 @@ SCENARIO( "Count values mathcing a predicate") {
     std::vector<double> x = {0,2,4,6.99,8.01,1,3.14,5,7,9};
     WHEN( "the entire array is examined for values > 7" ) {
       THEN( "count_if should return 2" ) {
-        REQUIRE( mesa::count_if(&x[0], &x[x.size()],
+        REQUIRE( mesa::count_if(x.begin(), x.end(),
                   [](double i){ return i > 7; } ) == 2);
       }
     }
     WHEN( "the part of array is examined for values >= 6" ) {
       THEN( "count_if should return 0" ) {
-        REQUIRE( mesa::count_if(&x[3], &x[x.size()],
+        REQUIRE( mesa::count_if(x.begin()+3, x.end(),
                   [](double i){ return i >= 6; } ) == 4);
       }
     }
@@ -55,7 +55,7 @@ SCENARIO( "Compute the invariants of count_if") {
     std::vector<int> x = {0,2,4,6,8,1,3,5,7,9};
     WHEN( "begin == end" ) {
       THEN( "0 should be returned" ) {
-        REQUIRE( mesa::count_if(&x[0], &x[0], is_even) == 0);
+        REQUIRE( mesa::count_if(x.begin()+1, x.begin()+1, is_even) == 0);
       }
     }
   }
