@@ -2,9 +2,6 @@
 The goal of this lab is to gain more
 practice working with STL algorithms.
 
-## Restrictions
-- Do not use any STL algorithms in this lab!
-
 ## Steps
 
 ### 1. Create files
