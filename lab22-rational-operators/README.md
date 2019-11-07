@@ -10,7 +10,7 @@ member functions only when appropriate.
 ### 1. Copy files
 Copy the file `src/Rational.h` from the previous lab.
 You may use your own copy or my solution.
-If you want to copy my solution from your `solutions` branch:
+If you want to copy my solution from your `solution` branch:
 
 ```bash
 mkdir src
