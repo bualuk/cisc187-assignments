@@ -15,7 +15,7 @@ If you want to copy my solution from your `solutions` branch:
 ```bash
 mkdir src
 cd src
-git checkout solutions ../lab21-rational/src/Rational.h 
+git checkout solution ../../lab21-rational/src/Rational.h 
 ```
 
 ### 2. Assignment and comparison overloads
