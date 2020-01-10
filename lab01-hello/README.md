@@ -11,7 +11,16 @@ everyone has the ability to checkout assignments,
 modify them, and submit them for grading.
 
 ## Step 1: Using Git
-1. clone this repo: `git clone <URL>`
+1. clone your cisc187 repo: `git clone <URL>`
+   - Initialize your git identity:
+   
+   ```
+   $ git config --global user.name "Jane Doe"
+   $ git config --global user.email janedoe@example.com
+   ```
+   
+   You only need to do this once on each computer where you clone git repositories.
+   
 2. Build and run the unit test
 3. Edit the [Academic integrity promise](integrity.md)
 
@@ -29,4 +38,20 @@ modify them, and submit them for grading.
   - `git add *.md`
   - `git commit -m 'finished lab1'
   - `git push`
+
+## Step 2: Using Linux
+1. Login to your Mesa server account
+2. One the command prompt, run `setup-vim`
+3. Clone your cisc187 repo again, if you didn't clone it here in Step 1
+4. Build and run the unit test
+5. Edit src/main.cpp on buffy using `vi`
+   
+   - Write a loop that prints hello world at least twice.
+   - You may make other edits if you desire
+   
+6. Commit your changes
+7. Run `vimtutor` and work through the entire tutorial
+
+When you want to logout of the Mesa server, type `exit` at the command prompt.
+
 
