@@ -10,13 +10,14 @@ The primary objective of this first lab is to ensure
 everyone has the ability to checkout assignments,
 modify them, and submit them for grading.
 
-## Using Git: 4 points
+## Step 1: Using Git
 1. clone this repo: `git clone <URL>`
 2. Build and run the unit test
 3. Edit the [Academic integrity promise](integrity.md)
 
   - Fill in your name and
   - Type an **x** in each checkbox area `[ ]`
+    - [x] if done correctly it should look like this
 
 4. Edit this file:
 
