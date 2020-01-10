@@ -2,6 +2,7 @@
 #define DOCTEST_CONFIG_NO_POSIX_SIGNALS
 
 #include <cstddef>
+#include <iostream>
 #include <string>
 
 #include <doctest.h>
@@ -12,13 +13,14 @@ using std::string;
 static void do_check(string orig) {
   THEN( "an exact copy should be created on the free store" ) {
     const char* expected = orig.c_str();
-    auto actual = mesa::copy(&orig[0]);
-    REQUIRE(actual != expected);
-    for (int i = 0; actual[i]; ++i) {
+    auto actual = mesa::copy(&orig[0], orig.size());
+    REQUIRE_MESSAGE(actual != expected, "copied object has the same address as the original");
+    INFO ( "Actual: '" << actual << "', Expected: '" << expected << "'." );
+    for (int i = 0; expected[i]; ++i) {
       CAPTURE (i);
-      CHECK(actual[i] == expected[i]);
+      REQUIRE_MESSAGE (actual[i] == expected[i], 
+              "'" << actual[i] << "' received, '" << expected[i] << "' expected");
     }
-    //delete[] actual;
   }
 }
 

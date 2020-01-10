@@ -33,9 +33,9 @@ You do not need to worry about locale or characters outside the ASCII character 
 
 ### 3. Copy
 Write a function 
-`char* mesa::copy(const char*)`
-that returns a pointer
-to an array copied into memory allocated on the free store.
+`char* mesa::copy(const char* source, const size_t count)`
+that copies up to `count` characters from the `source` array
+into an array allocated on the free store.
 
 Stop copying if a null character is encountered.
 
@@ -47,14 +47,16 @@ the number of occurrences of the `char` in the array.
 
 Stop counting if a null character is encountered.
 
-### 5. Find
-Write a function
-`const char* mesa::find(const char* str, const char* x)`
-that returns
-the first occurrence of `x` in `str`.
+### 5. Min
+Write a function template
+```cpp
+template<class ForwardIterator>
+ForwardIterator mesa::min (ForwardIterator begin, ForwardIterator end);
+```
 
-- if `x` is null, return `s`
-- if `s` is null, return `nullptr`.
+that the smallest value in the range provided.
+
+- if `begin` points to the same value as `end`, return `end`
 
 ### 6. Test using Valgrind
 Create a file `main.cpp`.

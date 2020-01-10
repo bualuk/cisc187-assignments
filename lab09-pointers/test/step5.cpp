@@ -1,73 +1,73 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #define DOCTEST_CONFIG_NO_POSIX_SIGNALS
 
-#include <string>
+#include <iterator>
+#include <vector>
 
 #include <doctest.h>
 #include <lab9.h>
 
-using std::string;
+SCENARIO( "return a pointer to the smallest element in a range") {
 
-SCENARIO( "Find substring in C string") {
+  GIVEN( "a list of values {1,4,1,5,9,2,6}" ) {
+    std::vector<int> v{1,4,1,5,9,2,6};
 
-  GIVEN( "a valid C string" ) {
-    WHEN( "HELLO is provided" ) {
-      const char* orig = "HELLO";
-      AND_WHEN("the substring is 'LL'" ) {
-        THEN("find should return 'LLO'" ) {
-          string actual = mesa::find(orig, "LL");
-          string expected = "LLO";
-          REQUIRE_MESSAGE(!actual.empty(), "response from find came back empty!");
-          REQUIRE(actual == expected);
-        }
-      }
-      AND_WHEN("the substring is 'HE'" ) {
-        THEN("find should return 'HELLO'" ) {
-          string actual = mesa::find(orig, "HE");
-          string expected = "HELLO";
-          REQUIRE_MESSAGE(!actual.empty(), "response from find came back empty!");
-          REQUIRE(actual == expected);
-        }
-      }
-      AND_WHEN("the substring is 'E'" ) {
-        THEN("find should return 'ELLO'" ) {
-          string actual = mesa::find(orig, "E");
-          string expected = "ELLO";
-          REQUIRE_MESSAGE(!actual.empty(), "response from find came back empty!");
-          REQUIRE(actual == expected);
-        }
+    WHEN( "the first element is smallest" ) {
+      std::vector<int>::iterator actual = mesa::min(v.begin(), v.end());
+      THEN("min should return the first '1'" ) {
+        auto actual_index = std::distance(v.begin(), actual);
+        auto expected_index = std::distance(v.begin(), v.begin());
+        REQUIRE(actual_index == expected_index);
+        REQUIRE(*actual == 1);
       }
     }
-    WHEN( "'one fish, red fish, two fish, blue fish' is provided" ) {
-      const char* orig = "one fish, red fish, two fish, blue fish";
-      AND_WHEN("the substring is 'blue'" ) {
-        THEN("find should return 'blue fish'" ) {
-          string actual = mesa::find(orig, "blue");
-          string expected = "blue fish";
-          REQUIRE_MESSAGE(!actual.empty(), "response from find came back empty!");
-          REQUIRE(actual == expected);
-        }
-      }
-      AND_WHEN("the substring is 'fish'" ) {
-        THEN("find should return 'fish, red fish, two fish, blue fish'" ) {
-          string actual = mesa::find(orig, "fish");
-          string expected = "fish, red fish, two fish, blue fish";
-          REQUIRE_MESSAGE(!actual.empty(), "response from find came back empty!");
-          REQUIRE(actual == expected);
-        }
+
+    WHEN( "the last element is smallest" ) {
+      std::vector<int>::iterator actual = mesa::min(v.begin()+3, v.end()-1);
+      THEN("min should return the '2'" ) {
+        auto actual_index = std::distance(v.begin()+3, actual);
+        auto expected_index = std::distance(v.begin()+3, v.end()-2);
+        REQUIRE(actual_index == expected_index);
+        REQUIRE(*actual == 2);
       }
     }
+
+    WHEN( "there is only 1 element in the range" ) {
+      std::vector<int>::iterator actual = mesa::min(v.begin()+1, v.begin()+2);
+      THEN("min should return it (a 4 in this case)" ) {
+        auto actual_index = std::distance(v.begin()+1, actual);
+        auto expected_index = std::distance(v.begin()+1, v.begin()+1);
+        REQUIRE(actual_index == expected_index);
+        REQUIRE(*actual == 4);
+      }
+    }
+
+  }
+
+  GIVEN( "an array of values {2,7,1,-8,2,-8,1,8,2,-8}" ) {
+    int v[] = {2,7,1,-8,2,-8,1,8,2,-8};
+    WHEN( "there is more than 1 element in the range" ) {
+      int* actual = mesa::min(std::begin(v), std::end(v));
+      THEN("min should return the first (the -8 at position 4)" ) {
+        auto actual_index = std::distance(std::begin(v), actual);
+        auto expected_index = std::distance(std::begin(v), std::begin(v)+3);
+        REQUIRE(actual_index == expected_index);
+        REQUIRE(*actual == -8);
+      }
+    }
+
+
   }
 }
 
-SCENARIO( "Compute the invariants of find") {
+SCENARIO( "Compute the invariants of min") {
 
-  GIVEN( "an empty C string" ) {
-    WHEN( "nothing is provided" ) {
-      const char* empty = "";
-      THEN("the result should be the null cahracter" ) {
-        auto actual = mesa::find(empty, "A");
-        REQUIRE(!actual);
+  GIVEN( "an empty range" ) {
+    WHEN( "the end pointer equals the begin pointer" ) {
+      std::vector<int> empty;
+      THEN("the end pointer is returned" ) {
+        auto actual = mesa::min(empty.begin(), empty.end());
+        REQUIRE(actual == empty.end());
       }
     }
   }
