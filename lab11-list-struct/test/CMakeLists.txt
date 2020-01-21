@@ -10,5 +10,6 @@ make_test(step2)
 make_test(step3)
 make_test(step4)
 make_test(step5)
+make_test(step6)
 
 
