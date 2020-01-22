@@ -46,7 +46,7 @@ The formula for multiplication is:
 Create operator overloads for division.
 The formula for division is:
 
-![a over b \[u00F7] c over d = ad over bc](https://latex.codecogs.com/svg.latex?%5Cfrac%7Ba%7D%7Bb%7D%20%5Cdiv%20%5Cfrac%7Bc%7D%7Bd%7D%20%3D%5Cfrac%7Bad%7D%7Bbc%7D)
+![a over b \[u00F7\] c over d = ad over bc](https://latex.codecogs.com/svg.latex?%5Cfrac%7Ba%7D%7Bb%7D%20%5Cdiv%20%5Cfrac%7Bc%7D%7Bd%7D%20%3D%5Cfrac%7Bad%7D%7Bbc%7D)
 
 ## Turnitin
 Check your progress by running `make test` or `ctest -V`.
