@@ -2,11 +2,11 @@
 #define DOCTEST_CONFIG_NO_POSIX_SIGNALS
 
 #include <doctest.h>
-#include "../src/Rational.h"
+#include "../src/rational.h"
 
 SCENARIO( "Check equality") {
   GIVEN( "a single rational" ) {
-    Rational<int> a {1,3};
+    rational<int> a {1,3};
     WHEN("compared with itself") {
       THEN( "it should be considered equal (reflexive property)" ) {
         REQUIRE (a == a);
@@ -15,8 +15,8 @@ SCENARIO( "Check equality") {
   }
   GIVEN( "eqivalent rationals" ) {
     WHEN("a = 1/3, b = 1/3") {
-      Rational<int> a {1,3};
-      Rational<int> b {1,3};
+      rational<int> a {1,3};
+      rational<int> b {1,3};
       THEN( "the two numbers should be considered equal (a==b)" ) {
         REQUIRE (a == b);
       }
@@ -25,17 +25,17 @@ SCENARIO( "Check equality") {
       }
     }
     WHEN("a = 1/2, b = 5/10") {
-      Rational<int> a {1,2};
-      Rational<int> b {5,10};
+      rational<int> a {1,2};
+      rational<int> b {5,10};
       THEN( "the two numbers should be considered equal" ) {
         REQUIRE (a == b);
         CHECK (a <= b);
       }
     }
     WHEN("there are 3 equal numbers, a == b == c") {
-      Rational<int> a {1,3};
-      Rational<int> b {3,9};
-      Rational<int> c {9,27};
+      rational<int> a {1,3};
+      rational<int> b {3,9};
+      rational<int> c {9,27};
       THEN( "equality is symmetric" ) {
         REQUIRE ((a == b && b == a));
       }
@@ -47,9 +47,9 @@ SCENARIO( "Check equality") {
         CHECK (b <= c);
         CHECK (a <= c);
       }
-      Rational<int> d {1,9};
-      Rational<int> e {2,18};
-      Rational<int> f {-1,-9};
+      rational<int> d {1,9};
+      rational<int> e {2,18};
+      rational<int> f {-1,-9};
       CHECK_MESSAGE(d == d, "reflexive property");
       CHECK_MESSAGE((d == e && e == d), "symmetry property");
       CHECK_MESSAGE((d == e && e == f && d == f), "transitive property");
@@ -58,8 +58,8 @@ SCENARIO( "Check equality") {
 
   GIVEN( "two unequal rationals" ) {
     WHEN("a = 1/3, b = 1/4") {
-      Rational<int> a {1,3};
-      Rational<int> b {1,4};
+      rational<int> a {1,3};
+      rational<int> b {1,4};
       THEN( "the two numbers should be considered not equal (a!=b)" ) {
         REQUIRE (a != b);
       }
@@ -76,13 +76,13 @@ SCENARIO( "Check equality") {
       }
     }
     WHEN("a = 1/9, b = 1/11") {
-      REQUIRE (Rational<int>{1,9} > Rational<int>{1,11});
-      REQUIRE (Rational<int>{1,11} < Rational<int>{1,9});
+      REQUIRE (rational<int>{1,9} > rational<int>{1,11});
+      REQUIRE (rational<int>{1,11} < rational<int>{1,9});
     }
     WHEN("there are 3 unequal numbers, a != b != c") {
-      Rational<int> a {2,3};
-      Rational<int> b {2,9};
-      Rational<int> c {8,27};
+      rational<int> a {2,3};
+      rational<int> b {2,9};
+      rational<int> c {8,27};
       THEN( "a != b" ) {
         REQUIRE (a != b);
       }
@@ -96,8 +96,8 @@ SCENARIO( "Check equality") {
   }
   GIVEN( "two unequal rationals" ) {
     WHEN("a = 1/3, b = 1/4") {
-      Rational<int> a {1,3};
-      Rational<int> b {1,4};
+      rational<int> a {1,3};
+      rational<int> b {1,4};
       AND_WHEN("a is assigned to b") {
         b = a;
         THEN( "the two numbers should be considered equal" ) {

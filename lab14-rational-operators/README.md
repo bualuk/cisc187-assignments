@@ -1,5 +1,5 @@
 # Rational number operator overloads
-The goal of this lab is to add math operations to Rational
+The goal of this lab is to add math operations to rational
 so that it behaves much like the fundamental types.
 
 In all steps, ensure that your operator overloads are
@@ -8,7 +8,7 @@ member functions only when appropriate.
 ## Steps
 
 ### 1. Copy files
-Copy the file `src/Rational.h` from the previous lab.
+Copy the file `rational.h` from the previous lab.
 You may use your own copy or my solution.
 
 ### 2. Assignment and comparison overloads
@@ -17,7 +17,7 @@ Create an operator overload for assignment.
 Create overloads for all 6 comparison overloads.
 The formula for equality is:
 
-![a over b = c over d roman {" if and only if, "} ad = bc](https://latex.codecogs.com/svg.latex?%5Cfrac%7Ba%7D%7Bb%7D%20%3D%20%5Cfrac%7Bc%7D%7Bd%7D%2C%20%5Ctextrm%7Bif%20and%20only%20if%7D%20%5C%3B%20ad%20%3D%20bc)
+![a over b = c over d roman {" if and only if, "} ad = bc](https://latex.codecogs.com/svg.latex?%5Cfrac%7Ba%7D%7Bb%7D%20%3D%20%5Cfrac%7Bc%7D%7Bd%7D%2C%20%5Ctextrm%7Bif%20and%20only%20iff%7D%20%5C%3B%20ad%20%3D%20bc)
 
 Remember you only need to implement 'real' code in
 `operator==` and `operator<`.
@@ -46,7 +46,7 @@ The formula for multiplication is:
 Create operator overloads for division.
 The formula for division is:
 
-![a over b \[u00F7\] c over d = ad over bc](https://latex.codecogs.com/svg.latex?%5Cfrac%7Ba%7D%7Bb%7D%20%5Cdiv%20%5Cfrac%7Bc%7D%7Bd%7D%20%3D%5Cfrac%7Bad%7D%7Bbc%7D)
+![a over b \[u00F7] c over d = ad over bc](https://latex.codecogs.com/svg.latex?%5Cfrac%7Ba%7D%7Bb%7D%20%5Cdiv%20%5Cfrac%7Bc%7D%7Bd%7D%20%3D%5Cfrac%7Bad%7D%7Bbc%7D)
 
 ## Turnitin
 Check your progress by running `make test` or `ctest -V`.
