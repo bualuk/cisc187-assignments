@@ -22,31 +22,10 @@ member functions only when appropriate.
 ## Steps
 
 ### 1. Create files
-Create the file `src/Rational.h`
+Create the file `src/rational.h`
 
-### 2. Function `gcd`
-Create a function in `Rational.h` to reduce fractions
-to their greatest common divisor.
-
-Use the following to compute the 
-greatest common divisor of the numerator and denominator:
-
-```cpp
-#include <cmath>
-
-// Compute the greatest common divisor of two integers
-// In C++17, it is provided.
-// see http://en.cppreference.com/w/cpp/numeric/gcd
-//
-inline
-constexpr
-int gcd(int x, int y) { 
-  return y == 0?  std::abs(x): gcd(y, x % y); 
-}
-```
-
-### 3. class `Rational`
-Create a `Rational` class template.
+### 2. class `rational`
+Create a `rational` class template.
 The class should only take 1 type parameter.
 
 The denominator and numerator for your class should both be the same type.
@@ -55,16 +34,13 @@ Create a default constructor.
 Default the numerator to 0 and the denominator to 1.
 
 Provide functions `numerator` and `denominator` that return the
-parts of a Rational.
+parts of a rational.
 
-### 4. Rational constructors
+### 3. rational constructors
 Create a two argument constructor.  
 Make the denominator default value = 1.
 
-This constructor must reduce the numerator and
-denominator arguments using the `gcd` function.
-
-The constructor should also enforce the constraint that an 
+The constructor should enforce the constraint that an 
 Integral type is required.  
 Consider using
 
@@ -76,17 +52,17 @@ static_assert(std::is_integral<T>::value,
 The `std::is_integral` class is defined in header
 `<type_traits>`.
 
-### 5. Rational to double type conversion
-Create 2 functions that convert a `Rational` to a `double`:
+### 4. rational to double type conversion
+Create 2 functions that convert a `rational` to a `double`:
 - a conversion operator overload and
 - a function `to_double()`
 
 If the denominator contains 0, then return 
 `std::numeric_limits<double>::infinity()`.
 
-### 6. String conversion
+### 5. String conversion
 Create a conversion operator overload
-that converts a `Rational` to a `std::string`.
+that converts a `rational` to a `std::string`.
 
 The string should separate numerator and denominator with the '/' character.
 
@@ -97,9 +73,9 @@ Other requirements:
 - If the numerator equals the denominator, return "1".
 - If the denominator is zero, return "inf".
 
-### 7. Stream extraction
+### 6. Stream extraction
 Create a `std::ostream` overload
-(`operator <<`) to send a Rational number to a stream.
+(`operator <<`) to send a rational number to a stream.
 
 ## Turnitin
 Check your progress by running `make test` or `ctest -V`.
