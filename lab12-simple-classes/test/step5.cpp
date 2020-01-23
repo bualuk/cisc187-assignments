@@ -7,37 +7,37 @@
 SCENARIO( "Test Dog class") {
   
   WHEN( "a default Dog is created" ) {
-    Dog d;
+    dog d;
     THEN( "the default name == 'Fido'" ) {
       REQUIRE (d.name() == "Fido");
     }
     THEN( "the default Size == 'Size::MEDIUM'" ) {
-      REQUIRE (d.size() == Size::MEDIUM);
+      REQUIRE (d.size() == dog_size::MEDIUM);
     }
   }
 
   WHEN( "a LARGE Dog is created with name 'Max'" ) {
-    Dog d {"Max", Size::LARGE};
+    dog d {"Max", dog_size::LARGE};
     THEN( "the name == 'Max'" ) {
       REQUIRE (d.name() == "Max");
     }
     THEN( "the Size == 'Size::LARGE'" ) {
-      REQUIRE (d.size() == Size::LARGE);
+      REQUIRE (d.size() == dog_size::LARGE);
     }
   }
 
   WHEN( "a SMALL Dog is created with name 'Princess'" ) {
-    Dog d {"Princess", Size::SMALL};
+    dog d {"Princess", dog_size::SMALL};
     THEN( "the name == 'Princess'" ) {
       REQUIRE (d.name() == "Princess");
     }
     THEN( "the Size == 'Size::SMALL'" ) {
-      REQUIRE (d.size() == Size::SMALL);
+      REQUIRE (d.size() == dog_size::SMALL);
     }
   }
 
   WHEN( "a Dog is created with name 'Princess'" ) {
-    Dog d {"Princess", Size::SMALL};
+    dog d {"Princess", dog_size::SMALL};
     THEN( "the name == 'Princess'" ) {
       REQUIRE (d.name() == "Princess");
     }
@@ -49,21 +49,21 @@ SCENARIO( "Test Dog class") {
     }
   }
   WHEN( "a LARGE Dog is created" ) {
-    Dog d {"Cujo", Size::LARGE};
+    dog d {"Cujo", dog_size::LARGE};
     THEN( "bark should return 'Woof'" ) {
       REQUIRE (d.bark() == "Woof");
     }
   }
 
   WHEN( "a Medium Dog is created" ) {
-    Dog d {"Balto", Size::MEDIUM};
+    dog d {"Balto", dog_size::MEDIUM};
     THEN( "bark should return 'Ruff'" ) {
       REQUIRE (d.bark() == "Ruff");
     }
   }
 
   WHEN( "a Small Dog is created" ) {
-    Dog d {"Benji", Size::SMALL};
+    dog d {"Benji", dog_size::SMALL};
     THEN( "bark should return 'Yip'" ) {
       REQUIRE (d.bark() == "Yip");
     }

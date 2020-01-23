@@ -6,19 +6,19 @@
 
 SCENARIO( "Test Truck class") {
   WHEN( "a Truck is created" ) {
-    Truck t;
+    truck t;
     THEN( "the default num tires should == 6" ) {
       REQUIRE (t.tires() == 6);
     }
   }
   WHEN( "the number of tires is set == 18 when constructed" ) {
-    Truck t {18};
+    truck t {18};
     THEN( "the num tires should == 18" ) {
       REQUIRE (t.tires() == 18);
     }
   }
   WHEN( "the a default constructed truck loses 1 tire" ) {
-    Truck t;
+    truck t;
     t.pop_tire();
     THEN( "the tires remaining should == 5" ) {
       REQUIRE (t.tires() == 5);

@@ -3,7 +3,7 @@ Design and implement a few simple classes.
 The goal is become comfortable writing code in a new style.
 That is, encapsulating functions inside classes.
 
-These classes do not need to reside in namespace mesa.
+Only class `clock` needs to reside in namespace mesa.
 
 ## Steps
 Ensure all class data is private and implement the following:
@@ -11,14 +11,17 @@ Ensure all class data is private and implement the following:
 ### 1. Create files
 Create the files `lab12.h` and `lab12.cpp`.
 
-### 2. Class `Clock`
-Define a class `Clock` in file `lab12.h`.
+### 2. Class `clock`
+Define a class `clock` in file `lab12.h`.
 - It should have 1 member to store the time in a `double`.
 - Add two functions to the class named `time`.
   One to change and one to retrieve the time.
 - Implement the class in `lab12.cpp`.
-### 3. Class `Complex`
-Define a class `Complex` in file `lab12.h`.
+
+Don't forget to definer this in the mesa namespace.
+
+### 3. Class `complex`
+Define a class `complex` in file `lab12.h`.
 - Add two `double` member variables: 
   one for the real part of the number and one for the imaginary part
 - Create a default constructor to initialize the number to (0,0).  
@@ -26,10 +29,10 @@ Define a class `Complex` in file `lab12.h`.
 - Create a two argument constructor to initialize the number to
   `(double real, double imaginary)`.
 - Add functions to retrieve the complex value components
-  (real part and imaginary part).
+  (real part and imaginary part) name these functions `real` and `imaginary`.
 - Implement the class in `lab12.cpp`.
-### 4. Class `Truck`
-Define a class `Truck` in file `lab12.h`.
+### 4. Class `truck`
+Define a class `truck` in file `lab12.h`.
 - Define a `uint16_t` member variable to store the number of tires on the vehicle.  
   Create a default constructor to initialize the tires to 6.
 - Create a one argument constructor to initialize the tires to a provided value.
@@ -37,26 +40,26 @@ Define a class `Truck` in file `lab12.h`.
   Do not allow this function to reduce the number when the number of tires is already 0.
 - Add a `uint16_t` function `tires` that returns the number of tires.
 - Implement the class in `lab12.cpp`.
-### 5. Class `Dog`
-Create a `Dog` class from the following `struct`:
+### 5. Class `dog`
+Create a `dog` class from the following `struct`:
 
 ```cpp
-  enum class Size {SMALL, MEDIUM, LARGE};
+  enum class dog_size {SMALL, MEDIUM, LARGE};
 
-  struct Dog {
+  struct dog {
     std::string  name;
-    Size sz;
+    dog_size sz;
   };
 ```
 
 - Refactor the `struct` into a `class` in 
   file `lab12.h`.  
   Make `name` and `sz` private.
-- Add a constructor so that the dog name and  size can be set when a Dog is created.
-- Add default values for your Dog class: `"Fido"` and `Size::MEDIUM`.
-- Add functions to retrieve name and Size.
-- Add a function to change the name of a Dog.
-- Add a function `std::string Dog::bark() const` such that:
+- Add a constructor so that the dog name and  size can be set when a dog is created.
+- Add default values for your dog class: `"Fido"` and `dog_size::MEDIUM`.
+- Add functions to retrieve name and `dog_size`.
+- Add a function to change the name of a dog.
+- Add a function `std::string dog::bark() const` such that:
   - `LARGE` dogs return "Woof"
   - `MEDIUM` dogs return "Ruff"
   - `SMALL` dogs return "Yip"
