@@ -58,7 +58,7 @@ std::ostream& operator<< (std::ostream&, const mesa::tree<T>*);
 **Notes:**
 
 - This template should be implemented recursively.
-- Use **prefix traversal** for your function.
+- Use **preorder traversal** for your function.
 - Checking if the tree pointer equals `nullptr` is the base case.
 - For the recursive case, stream the value, followed by a single space.
 
