@@ -39,7 +39,7 @@ the tree needs to be made on the free-store.
 ### 4. Template `make_tree(T, tree<T>*, tree<T>*)`
 Implement the function template 
 
-````cpp
+```cpp
 tree<T>* make_tree(T value, tree<T>* left, tree<T>* right);
 ```
 
