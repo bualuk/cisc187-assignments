@@ -50,7 +50,6 @@ SCENARIO( "Play with pets") {
         auto first = actual.str().find_first_of(expected); 
         auto last = actual.str().find_last_of(expected); 
         CHECK_MESSAGE(first != std::string::npos, "Did not play with a Cat");
-        CHECK_MESSAGE(last != std::string::npos, "Did not play with a Cat a second time");
         CHECK_MESSAGE(last != first, "Did not play with a Cat a second time");
         
         expected = "fetch!!\n";
