@@ -76,7 +76,7 @@ Implement a 1 argument constructor to create an array
 from a list of values.
 Use the following signature:
 
-```cpp
+````cpp
 explicit array(std::initializer_list<T>);
 ```
 
@@ -84,17 +84,6 @@ Copy each item from the provided list into the backing store.
 
 **Hint:** `std::copy` will let you achiave this without resorting to
 a hand-rolled loop.
-
-When done, consider adding the default implementations for 
-the remaining constructors, assignment, and the destructor:
-
-```cpp
-~array()                         = default; // destructor
-array(const array&)              = default; // copy construct
-array(array&&)                   = default; // move construct
-array& operator=(const array &)  = default; // copy assign
-array& operator=(array &&)       = default; // move assign
-```
 
 ### 7. Function `empty`
 Implement a function empty:
