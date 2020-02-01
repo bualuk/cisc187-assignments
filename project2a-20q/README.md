@@ -1,4 +1,4 @@
-# Project #2: Twenty questions
+# Project #2a: Twenty questions
 The goal of this project is to create a game called **twenty questions**
 that you play against the computer.
 
