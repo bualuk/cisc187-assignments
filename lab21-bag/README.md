@@ -33,10 +33,7 @@ Use either your IDE refactoring tools, or you can make the changes manually:
 - Modify the default constructor.
 
   - Set the default capacity and size = `0`
-  - Don't fill the backing store with defaults
-    (We're going to do this in step 2 instead)
-  - Set the backing store to a new array on the free store using the size
-    from the previous step.
+  - Set the backing store equal to the null pointer
 - Add a destructor.
   We didn't need to worry about this for our array, because it did not create
   any resources that needed to be managed.

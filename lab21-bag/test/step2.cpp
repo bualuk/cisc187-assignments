@@ -40,7 +40,7 @@ SCENARIO( "Test mesa::bag size and capacity" ) {
 
   WHEN( "constructing mesa::bag<int>" ) {
     mesa::bag<int> actual;
-    THEN ("empty should return true and size = 16") {
+    THEN ("empty should return true and size = 0") {
       CHECK(actual.empty() == true);
       CHECK(actual.size() == 0);
       CHECK(actual.capacity() == default_capacity);
@@ -51,7 +51,7 @@ SCENARIO( "Test mesa::bag size and capacity" ) {
 
   WHEN( "constructing mesa::bag<std::string>" ) {
     mesa::bag<std::string> actual;
-    THEN ("empty should return false and size = 16") {
+    THEN ("empty should return false and size = 0") {
       CHECK(actual.empty() == true);
       CHECK(actual.size() == 0);
       CHECK(actual.capacity() == default_capacity);
@@ -62,9 +62,12 @@ SCENARIO( "Test mesa::bag size and capacity" ) {
 
 SCENARIO( "Test mesa::bag data pointer" ) {
   WHEN( "constructing an empty mesa::bag<double>" ) {
-    THEN ("the std::distance between begin and end should equal the size") {
-      mesa::bag<double> actual;
-      CHECK(std::distance(actual.data(), actual.end()) == actual.size());
+    mesa::bag<double> actual;
+    THEN ("the data function should == nullptr") {
+      CHECK(actual.data() == nullptr);
+    }
+    AND_THEN ("the std::distance between begin and end should equal the size") {
+      CHECK(std::distance(actual.begin(), actual.end()) == actual.size());
     }
   }
 }
