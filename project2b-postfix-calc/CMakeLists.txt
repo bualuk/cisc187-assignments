@@ -4,9 +4,10 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
   cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 
-project(project3 VERSION 1.0.0 LANGUAGES CXX)
+project(calc_project VERSION 1.0.0 LANGUAGES CXX)
 include ("../common.cmake")
 
 add_subdirectory(src)
+# Uncomment this if you create unit tests
 # add_subdirectory(test)
 
