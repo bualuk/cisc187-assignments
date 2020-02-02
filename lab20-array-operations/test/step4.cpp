@@ -24,3 +24,23 @@ SCENARIO( "function data() returns an array pointer" ) {
 
 }
 
+SCENARIO( "function back() returns a reference" ) {
+
+  WHEN( "mesa::array is declared" ) {
+    mesa::array<int, 5> actual {5,8,13,21,34};
+    THEN ( "back is a reference to the last element" ) {
+      CHECK(actual.back() == 34);
+      CHECK(&(actual.back()) == &(actual.data()[4]));
+    }
+  }
+
+  WHEN( "a const mesa::array is declared" ) {
+    const mesa::array<int, 5> actual = {5,8,13,21,34};
+    THEN ( "back is a reference to the last element" ) {
+      CHECK(actual.back() == 34);
+      CHECK(&(actual.back()) == &(actual.data()[4]));
+    }
+  }
+
+}
+

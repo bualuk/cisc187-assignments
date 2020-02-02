@@ -33,12 +33,22 @@ throw a `std::out_of_range` exception if an invalid array index is provided.
 
 Implement both the `const` version (above) and a non-const version.
 
-### 4. Function `data`
-Implement a function to access a pointer to the underlying backing store.
+### 4. Functions `data` and `back`
+Implement a function `data` to access a pointer to the underlying backing store.
 
 ```cpp
 T* data();
 ```
+Implement a function `back` to access a reference to the last element
+of the backing store.
+
+```cpp
+T& back();
+```
+Implement a function `back` to access a reference to the last element
+of the backing store.
+
+Implement `constexpr` versions of both functions.
 
 ### 5. Function `operator==` overload
 Implement a non-member function overload to check if 2 arrays are equal:
