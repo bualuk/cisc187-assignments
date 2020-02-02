@@ -76,7 +76,7 @@ Implement a 1 argument constructor to create an array
 from a list of values.
 Use the following signature:
 
-````cpp
+```cpp
 explicit array(std::initializer_list<T>);
 ```
 
