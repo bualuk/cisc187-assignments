@@ -72,6 +72,27 @@ SCENARIO( "Test mesa::bag data pointer" ) {
   }
 }
 
+
+SCENARIO( "function back() returns a reference" ) {
+
+  WHEN( "mesa::bag is declared" ) {
+    mesa::bag<int> actual {5,8,13,21,34};
+    THEN ( "back is a reference to the last element" ) {
+      CHECK(actual.back() == 34);
+      CHECK(&(actual.back()) == &(actual.data()[4]));
+    }
+  }
+
+  WHEN( "a const mesa::array is declared" ) {
+    const mesa::bag<int> actual {5,8,13,21,34};
+    THEN ( "back is a reference to the last element" ) {
+      CHECK(actual.back() == 34);
+      CHECK(&(actual.back()) == &(actual.data()[4]));
+    }
+  }
+
+}
+
 SCENARIO( "Test mesa::bag<T> initializer list constructor" ) {
 
   WHEN( "mesa::bag is explicitly constructed from a list" ) {
