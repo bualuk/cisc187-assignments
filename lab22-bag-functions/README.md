@@ -1,4 +1,4 @@
-# Bag class functions
+# Bag class
 
 The goal of this lab is to create a user defined
 class template that encapulates data storage that can grow
@@ -51,7 +51,7 @@ void resize(size_t new_capacity);
 
 - Call reserve to do most of your work.
 - Don't overwrite any data already in the bag -
-  just initialze any new capacity.
+  just initialize any new capacity.
 
 ### 4. Function `push_back`
 Implement a function that will add one element to a bag.
@@ -68,7 +68,14 @@ then use `reserve` to double the capacity of the bag.
 
 Keep in mind that a default constructed bag has capacity == 0.
 
-### 5. Bag allocator
+### 5. Function `pop_back`
+Implement a function that will remove one element from a bag.
+
+```cpp
+void pop_back();
+```
+
+### 6. Bag allocator
 Our bag class is quite generic, but makes two major assumptions:
 
 - Every type `T` has a default constructor
