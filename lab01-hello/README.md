@@ -36,7 +36,7 @@ modify them, and submit them for grading.
 5. Commit your changes:
 
   - `git add *.md`
-  - `git commit -m 'finished lab1'`
+  - `git commit -m 'finish lab1'`
   - `git push`
 
 ## Step 2: Using Linux
