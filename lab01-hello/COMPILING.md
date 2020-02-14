@@ -1,7 +1,7 @@
 # Compiling
 Use these instructions to compile and run the assignments you create.
 
-More details can be found in the (course reader)[http://localhost:8000/back-matter/app-a/toctree.html].
+More details can be found in the [course reader](http://localhost:8000/back-matter/app-a/toctree.html).
 
 ## Prerequisites
 To complete your assignments, you will need:
