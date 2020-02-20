@@ -33,8 +33,12 @@ This is a simple form of the *copy and swap idiom*.
 Without compiling, 
 determine the output of these functions and complete the table.
 Not all of the examples in the table below will compile.
-Which of these calls compile?
-Provide an explanation for each function call that does not compile.
+
+- Which of these calls compile?
+- Provide a brief explanation of each function call
+
+  - If it compiles, describe the result
+  - If it does not compile, explain why
 
 Given the following definitions of `x` and `y` when passed to `swap`:
 
