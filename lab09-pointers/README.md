@@ -25,11 +25,11 @@ Since you don't know the size of the array,
 or even if this is a valid pointer, the function needs to:
 
 1. First check if the pointer is valid.
-   Return `nullptr` if the pointer is null.
 2. Process each character until the null character is reached.
 3. If the character is currently upper case, then change it to lower.
 
-You do not need to worry about locale or characters outside the ASCII character set.
+You do not need to worry about locale or
+characters outside the ASCII character set.
 
 ### 3. Copy
 Write a function 
@@ -50,19 +50,27 @@ Stop counting if a null character is encountered.
 ### 5. Min
 Write a function template
 ```cpp
-template<class ForwardIterator>
-ForwardIterator mesa::min (ForwardIterator begin, ForwardIterator end);
+template<class Pointer>
+Pointer mesa::min (Pointer begin, Pointer end);
 ```
 
 that the smallest value in the range provided.
 
-- if `begin` points to the same value as `end`, return `end`
+- `Pointer` is a placeholder for some kind of pointer.
+- The parameters begin and end define a continuous
+range of values.
+- If `begin` points to the same value as `end`, return `end`
 
 ### 6. Test using Valgrind
 Create a file `main.cpp`.
 
 Call each of the functions you wrote.
 Keep it simple.
+
+Consider which of the above functions allocated memory
+on the free store.
+When main calls this function, it is responsible for
+cleaning that memory up.
 
 When finished, 
 check your main on buffy by running `valgrind`,
@@ -75,7 +83,7 @@ then run it through valgrind:
 valgrind src/main
 ```
 
-If you properly cleaned up after your pointers,
+If you properly cleaned up after your free store pointers,
 you should see the following line near the end of the output:
 
 ```
@@ -86,6 +94,9 @@ Otherwise,
 you see information indicating memory leaks or other memory related errors.
 
 If you have errors, then fix them.
+
+If you have more questions about using valgrind,
+refer to the textbook.
 
 ## Turnitin
 Check your progress by running `make test` or `ctest -V`.
