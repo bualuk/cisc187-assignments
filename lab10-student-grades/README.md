@@ -51,6 +51,8 @@ for example:
 Name:\tstudent name\tId:\tstudent id . . .
 ```
 
+Print grades to 2 decimal places.
+
 ### 3. Stream a vector of students
 Implement in `student.cpp` the `operator<<` overload
 to stream a `vector<student*>`.

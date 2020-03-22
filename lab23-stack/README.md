@@ -80,7 +80,7 @@ by calling function from the underlying container.
 
 An optional step is to add a move version of `push`
 
-### Step 5. Stack relationl operations
+### Step 5. Stack relational operations
 Create stack relational operators by using the operations
 in the underlying container.
 In order for the non-member relational operators to access the

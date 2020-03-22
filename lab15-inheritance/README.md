@@ -148,7 +148,7 @@ Given the following classes and a main method that uses them:
 
 Examine each of the 4 pairs of code that follow and
 describe what would happen when inserted at locations "A" and "B".
-For each, answer the following:
+For **each pair**, answer **all** of the following:
 
 - Which do not compile? 
 - Which compile and produce the following output?
