@@ -17,7 +17,7 @@ Create an operator overload for assignment.
 Create overloads for all 6 comparison overloads.
 The formula for equality is:
 
-![a over b = c over d roman {" if and only if, "} ad = bc](https://latex.codecogs.com/svg.latex?%5Cfrac%7Ba%7D%7Bb%7D%20%3D%20%5Cfrac%7Bc%7D%7Bd%7D%2C%20%5Ctextrm%7Bif%20and%20only%20iff%7D%20%5C%3B%20ad%20%3D%20bc)
+![a over b = c over d roman {" if and only if, "} ad = bc](https://latex.codecogs.com/svg.latex?%5Cfrac%7Ba%7D%7Bb%7D%20%3D%20%5Cfrac%7Bc%7D%7Bd%7D%2C%20%5Ctextrm%7Bif%20and%20only%20if%7D%20%5C%3B%20ad%20%3D%20bc)
 
 Remember you only need to implement 'real' code in
 `operator==` and `operator<`.
