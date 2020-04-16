@@ -4,7 +4,7 @@ This exercise is intended to increase familiarity with
 using pointers and the class concepts from the last two weeks:
 virtual functions, overloads, etc.
 
-This lab also provides more practive working with some of
+This lab also provides more practice working with some of
 the concepts used in the chain of responsibility pattern
 required for the last project.
 
