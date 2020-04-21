@@ -32,7 +32,7 @@ Implement a function template that extracts a tree into a stream
 using level order traversal.
 
 ```cpp
-void in_order (std::ostream&, const mesa::tree<T>*);
+void level_order (std::ostream&, mesa::tree<T>*);
 ```
 
 **Note:**
