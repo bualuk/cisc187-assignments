@@ -1,4 +1,4 @@
-# Recusrsive Binary Tree Traversals
+# Recursive Binary Tree Traversals
 
 The goal of todays lab is to explore tree traversals
 other than preorder.
