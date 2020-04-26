@@ -1,4 +1,4 @@
-# Recusrsive Binary Tree Traversals
+# Recursive Binary Tree Traversals
 
 The goal of todays lab is to explore tree traversals
 other than preorder.
@@ -6,7 +6,8 @@ other than preorder.
 ## Steps
 
 ### 1. Create files
-Copy your lab17 source files into the lab18 `src` directory.
+Copy your lab17.h source file into the lab18 `src` directory.
+Rename the file to `lab18.h` and change header guards as appropriate.
 
 ### 2. Template `mesa::post_order`
 Implement the function template 
