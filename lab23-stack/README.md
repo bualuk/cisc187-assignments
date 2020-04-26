@@ -34,7 +34,7 @@ Create a private member of type `Container` (the default is a bag),
 to function as both the backing store
 and as providing the capabilities of a stack.
 
-Create public members to store the valye type
+Create public members to store the value type
 and the container type:
 
 ```cpp
