@@ -1,23 +1,12 @@
-# Bag class
+# Bag class functions
 
-The goal of this lab is to create a user defined
+The goal of this lab is to contunie creating a user defined
 class template that encapulates data storage that can grow
 and shrink dynamically.
 
-This data type is sometimes referred to as a `bag`:
-a general expandable storage container with things thrown in
-no particular order.
-
-Like an array, a bag can access elements by index and
-iterate through all the elements in the container one at a time.
-
-Unlike an array, a bag can expand its storage as needed.
-Because the bag stores all of it's data on the free store,
-the amount of data it can hold is limited only by available system memory.
-
 ## Steps
 
-### 1. Copy array files
+### 1. Copy bag files
 Copy your `bag.h` from the previous lab,
 or my solution into the `src` directory.
 
@@ -117,7 +106,7 @@ Refactoring recipie:
    
    std::allocator_traits<Allocator>::construct(allocator_, &data_[i], value);
 
-   for (auto i = 0; i < int(size_); ++i) {
+   for (size_t i = 0; i < size_; ++i) {
      std::allocator_traits<Allocator>::destroy(allocator_, &data_[i]);
    }
 
@@ -133,7 +122,7 @@ memory::allocate(allocator_, size_);
 
 memory:construct(allocator_, &data_[i], value);
 
-for (auto i = 0; i < int(size_); ++i) {
+for (size_t i = 0; i < size_; ++i) {
  memory::destroy(allocator_, &data_[i]);
 }
 
