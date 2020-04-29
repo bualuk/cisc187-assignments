@@ -14,21 +14,28 @@ SCENARIO( "convert a rational to a double") {
       rational<int> r {0};
       THEN( "the value should convert to 0" ) {
         REQUIRE (r.to_double() == 0);
-        //REQUIRE (double(r) == 0);
+        REQUIRE (double(r) == 0);
       }
     }
     WHEN("the rational is 1/2") {
       rational<int> r {1,2};
       THEN( "the value should convert to 0.5" ) {
         REQUIRE (r.to_double() == doctest::Approx(0.5));
-        //REQUIRE (double(r) == doctest::Approx(0.5));
+        REQUIRE (double(r) == doctest::Approx(0.5));
       }
     }
     WHEN("the rational is {-22,7}") {
       rational<int> r {-22,7};
       THEN( "the value should convert to -pi" ) {
         REQUIRE (r.to_double() == doctest::Approx(-3.14).epsilon(0.01));
-        //REQUIRE (double(r) == doctest::Approx(-3.14).epsilon(0.01));
+        REQUIRE (double(r) == doctest::Approx(-3.14).epsilon(0.01));
+      }
+    }
+    WHEN("the rational is const") {
+      const rational<int> r {1,2};
+      THEN( "the value should convert to 0.5" ) {
+        REQUIRE (r.to_double() == doctest::Approx(0.5));
+        REQUIRE (double(r) == doctest::Approx(0.5));
       }
     }
   }
