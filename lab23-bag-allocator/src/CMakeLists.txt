@@ -4,8 +4,6 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
   cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 
-project(lab23 VERSION 1.0.0 LANGUAGES CXX)
-include ("../common.cmake")
+project(lab21 VERSION 1.0.0 LANGUAGES CXX)
 
-add_subdirectory(test)
 

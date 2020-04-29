@@ -1,8 +1,11 @@
 # Bag class functions
 
-The goal of this lab is to contunie creating a user defined
+The goal of this lab is to continue creating a user defined
 class template that encapulates data storage that can grow
 and shrink dynamically.
+
+I this lab we will actually implement the functions 
+that allow a bag to change size dynamically.
 
 ## Steps
 
@@ -63,77 +66,6 @@ Implement a function that will remove one element from a bag.
 ```cpp
 void pop_back();
 ```
-
-### 6. Bag allocator
-Our bag class is quite generic, but makes two major assumptions:
-
-- Every type `T` has a default constructor
-- `delete[]` will destroy memory in all bag elements when we are done
-
-The standard library provides facilities that help solve both problems.
-An *allocator* is an object that can create, manage, and destroy
-unitialized storage.
-
-In this last step, we will refctor our bag to add an allocator.
-
-Now would be a **very good time** to commit any work you have completed so far.
-
-Refactoring recipie:
-
-1. Modify the template declaration to include an allocator type:
-
-   ```cpp
-   template<class T, class Allocator = std::allocator<T>>
-   ```
-
-   We set the default allocator to be one generated from `T`,
-   but a caller is free to supply one.
-   Everyone else who doesn't need it can ignore it.
-1. Add a private member of the template `Allocator` type
-1. Replace all instances of `new` and `delete` with `allocate` and `destroy`
-   For example:
-
-   ```cpp
-   data_ = new T*[size_];
-   data_[i] = value;
-   delete[] data_;
-   ```
-
-   becomes
-
-   ```cpp
-   std::allocator_traits<Allocator>::allocate(allocator_, size_);
-   
-   std::allocator_traits<Allocator>::construct(allocator_, &data_[i], value);
-
-   for (size_t i = 0; i < size_; ++i) {
-     std::allocator_traits<Allocator>::destroy(allocator_, &data_[i]);
-   }
-
-   ```
-
-Because statements containing `std::allocator_traits<Allocator>::allocate` 
-get long quickly, consider aliasing it:
-
-```cpp
-using memory = std::allocator_traits<Allocator>;
-
-memory::allocate(allocator_, size_);
-
-memory:construct(allocator_, &data_[i], value);
-
-for (size_t i = 0; i < size_; ++i) {
- memory::destroy(allocator_, &data_[i]);
-}
-
-```
-
-When finished, all the tests that passed before the change
-should still all pass.
-
-Allocators are a complex part of C++ and they have changed in
-C++17 and C++20.
-If you don't understand this part of the lab, don't panic.
 
 ## Turnitin
 Check your progress by running `make test` or `ctest -V`.
