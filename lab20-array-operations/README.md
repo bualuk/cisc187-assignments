@@ -45,9 +45,6 @@ of the backing store.
 ```cpp
 T& back();
 ```
-Implement a function `back` to access a reference to the last element
-of the backing store.
-
 Implement `constexpr` versions of both functions.
 
 ### 5. Function `operator==` overload
