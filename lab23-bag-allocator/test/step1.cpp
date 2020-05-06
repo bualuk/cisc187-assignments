@@ -19,17 +19,17 @@ SCENARIO( "Test mesa::bag<T> value_type") {
     THEN( "the bag compiles" ) {
       REQUIRE_MESSAGE(&actual == &actual, "placeholder for compilation");
     } AND_THEN ( "the value_type is 'int'" ) {
-      REQUIRE_MESSAGE( (std::is_same<mesa::bag<int>::value_type, int>()), 
+      REQUIRE_MESSAGE( (std::is_same<mesa::bag<int>::value_type, int>() == true), 
           "expected 'value_type' to be 'int'");
     }
   }
 
   WHEN( "mesa::bag is declared with other types" ) {
     THEN ( "the value_type could be 'double'" ) {
-      CHECK_MESSAGE( (std::is_same<mesa::bag<double>::value_type, double>()), 
+      CHECK_MESSAGE( (std::is_same<mesa::bag<double>::value_type, double>() == true), 
           "expected 'value_type' to be 'double'");
     } AND_THEN ( "the value_type could be 'char'" ) {
-      CHECK_MESSAGE( (std::is_same<mesa::bag<char>::value_type, char>()), 
+      CHECK_MESSAGE( (std::is_same<mesa::bag<char>::value_type, char>() == true), 
           "expected 'value_type' to be 'char'");
     }
   }
