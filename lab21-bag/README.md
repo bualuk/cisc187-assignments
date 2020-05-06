@@ -34,6 +34,14 @@ Use either your IDE refactoring tools, or you can make the changes manually:
 
   - Set the default capacity and size = `0`
   - Set the backing store equal to the null pointer
+
+- Modify the initializer list constructor.
+
+  - Set the bag size to the initializer list size.
+  - Set the capacity to the bag size.
+  - Set the backing store a free store array of size 
+    equal to the bag size.
+
 - Add a destructor.
   We didn't need to worry about this for our array, because it did not create
   any resources that needed to be managed.
@@ -80,14 +88,16 @@ bag<T>& operator=(const bag<T>& other);
 ```
 
 When done with this step, you should also check your copy assignment
-does not leak memory by running the test through valgrind on buffy:
+does not leak memory by running the test through valgrind on buffy.
+First, cd into your build directory, then:
+
 
 ```
 valgrind --leak-check=full test/step5
 ```
 
 ### 6. Function `main`
-Write a main function that uses each of your `mesa::array` functions at least once.
+Write a main function that uses each of your `mesa::bag` functions at least once.
 
 
 ### Try This!
