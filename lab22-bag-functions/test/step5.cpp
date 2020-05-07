@@ -52,6 +52,17 @@ SCENARIO( "Test mesa::bag pop_back" ) {
         CHECK(actual.empty() == true);
       }
     }
+
+    WHEN( "we try to pop_back more values than are in the bag" ) {
+      actual.pop_back();
+      actual.pop_back();
+      THEN ( "the size should be 0" ) {
+        CHECK(actual.size() == 0);
+      } AND_THEN ( "the bag is empty" ) {
+        CHECK(actual.empty() == true);
+      }
+    }
+
   }
 
 }
