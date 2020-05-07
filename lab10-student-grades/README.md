@@ -51,7 +51,7 @@ for example:
 Name:\tstudent name\tId:\tstudent id . . .
 ```
 
-Print grades to 2 decimal places.
+**Print grades to 2 decimal places.**
 
 ### 3. Stream a vector of students
 Implement in `student.cpp` the `operator<<` overload
@@ -73,7 +73,8 @@ Implement a main that uses `load_classroom` and
 your stream classroom overloads.
 There should be no loops in main to do this.
 
-When complete, the program should produce the following results:
+When complete, the program should produce the following results
+when run from the `build/src` directory:
 
 ```
 # ./grades < class.txt
@@ -89,6 +90,13 @@ Name:   Fred    Id:    876345   Avg:    77.8
 Before main exits, 
 cleanup all the pointers in `main` that were returned by
 `load_classroom`.
+
+Run it through valgrind in your build directory as:
+
+```
+valgrind src/grades < src/class.txt
+```
+
 
 ## Turnitin
 Check your progress by running `make test` or `ctest -V`.

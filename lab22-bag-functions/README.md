@@ -31,6 +31,23 @@ it to the backing store.
   Why don't we need to do this?
 - Do not leak any memory.
 
+Check your memory use with `valgrind` by running:
+
+```
+ctest -T memcheck -R step2
+```
+
+or manually as:
+
+```
+valgrind --leak-check=full test/step2
+```
+
+
+in your build directory.
+
+**NOTE:** this command does not work on Windows.
+
 ### 3. Function `resize`
 Implement a function that will add extra *capacity* to our bag storage
 **and** initialize any data past the current size.
@@ -44,6 +61,21 @@ void resize(size_t new_capacity);
 - Call reserve to do most of your work.
 - Don't overwrite any data already in the bag -
   just initialize any new capacity.
+- Lastly, set the size to the new capacity
+
+Check your memory use with `valgrind` by running:
+
+```
+ctest -T memcheck -R step3
+```
+
+or manually as:
+
+```
+valgrind --leak-check=full test/step3
+```
+
+in your build directory.
 
 ### 4. Function `push_back`
 Implement a function that will add one element to a bag.

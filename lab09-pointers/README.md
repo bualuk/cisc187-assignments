@@ -77,7 +77,7 @@ check your main on buffy by running `valgrind`,
 a memory checking program.
 
 First create a main of your own and compile your program, 
-then run it through valgrind:
+then run it through valgrind in your build directory as:
 
 ```
 valgrind src/main
@@ -97,6 +97,21 @@ If you have errors, then fix them.
 
 If you have more questions about using valgrind,
 refer to the textbook.
+
+Check the step3 program with `valgrind` by running:
+
+```
+ctest -T memcheck -R step3
+```
+
+or manually as:
+
+```
+valgrind --leak-check=full test/step3
+```
+
+in your build directory.
+
 
 ## Turnitin
 Check your progress by running `make test` or `ctest -V`.
