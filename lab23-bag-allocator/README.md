@@ -43,7 +43,8 @@ Refactoring recipie:
    but a caller is free to supply one.
    Everyone else who doesn't need it can ignore it.
 1. Add a private member of the template `Allocator` type
-1. Replace all instances of `new` and `delete` with `allocate` and `destroy`
+1. Replace all instances of `new` and `delete` with `allocate` and `deallocate`.
+   The destructor needs a final `destroy` as well.
    For example:
 
    ```cpp
@@ -58,6 +59,9 @@ Refactoring recipie:
    std::allocator_traits<Allocator>::allocate(allocator_, size_);
    
    std::allocator_traits<Allocator>::construct(allocator_, &data_[i], value);
+
+   std::allocator_traits<Allocator>::deallocate(allocator_, data_, capacity_);
+
 
    for (size_t i = 0; i < size_; ++i) {
      std::allocator_traits<Allocator>::destroy(allocator_, &data_[i]);
@@ -75,6 +79,8 @@ memory::allocate(allocator_, size_);
 
 memory:construct(allocator_, &data_[i], value);
 
+memory::deallocate(allocator_, data_, capacity_);
+
 for (size_t i = 0; i < size_; ++i) {
  memory::destroy(allocator_, &data_[i]);
 }
@@ -84,9 +90,11 @@ for (size_t i = 0; i < size_; ++i) {
 When finished, all the tests that passed before the change
 should still all pass.
 
+Finally, use valgrind to ensure you're not leaking any memory
+or have created memory access errors.
+
 Allocators are a complex part of C++ and they have changed in
 C++17 and C++20.
-If you don't understand this part of the lab, don't panic.
 
 ## Turnitin
 Check your progress by running `make test` or `ctest -V`.
