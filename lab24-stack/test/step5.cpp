@@ -69,8 +69,8 @@ SCENARIO( "Check stack equality") {
       b.push(2);
       b.push(9);
       mesa::stack<int> c;
-      b.push(8);
-      b.push(27);
+      c.push(8);
+      c.push(27);
       THEN( "a != b" ) {
         REQUIRE (operator!=(a,b));
       }
