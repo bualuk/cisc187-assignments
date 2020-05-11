@@ -64,7 +64,7 @@ SCENARIO( "Test mesa::bag data pointer" ) {
   WHEN( "constructing an empty mesa::bag<double>" ) {
     THEN ("the std::distance between begin and end should equal the size") {
       mesa::bag<double> actual;
-      CHECK(std::distance(actual.data(), actual.end()) == actual.size());
+      CHECK(std::distance(actual.begin(), actual.end()) == actual.size());
     }
   }
 }
