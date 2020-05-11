@@ -13,7 +13,7 @@ in the `src` directory.
 Create a data structure in the *mesa* `namespace`:
 
 ```cpp
-// a value class for a fixed size array ot type T
+// a value class for a fixed size array of type T
 template<class T, size_t N>
   class array {
   };
