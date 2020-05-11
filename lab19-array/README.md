@@ -60,7 +60,7 @@ T* end();
 `end` should return a pointer *one position past* the last element
 of the array.
 
-Implement `constexpr` versions of these 2 functions.
+Implement `constexpr` and non-const versions of these 2 functions.
 
 ### 5. Default constructor
 Implement the default constructor.
