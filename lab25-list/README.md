@@ -30,6 +30,10 @@ template <class T>
 struct list_node {
   T value;
   list_node* next;
+  explicit list_node(const T& v, list_node* next = nullptr)
+    : value{v}
+    , next{next}
+  { }
 };
 
 ```
