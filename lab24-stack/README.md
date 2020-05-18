@@ -54,7 +54,7 @@ Create stack constructors:
 ```cpp
 stack();                                   // default
 stack(const stack<T>& other)               // copy constructor
-stack(const bag<T>& other)                 // copy from bag constructor
+stack(const container_type& other)           // copy from Container
 stack<T>& operator=(const stack<T>& other) // copy assign
 stack(stack<T>&& other)                    // move construct
 stack<T>& operator=(stack<T>&& other)      // move assign
