@@ -68,10 +68,16 @@ the value stored in the `list_node`.
 Implement overloads for **prefix** increment and **postfix** increment.
 
 Recall that postfix increment uses a dummy (unused) parameter to distinguish the
-two overloads.
+two overloads, postfix and prefix increment.
 
-Implement overloads for `==` and `!-`.
+Because prefix increment returns the `this` pointer,
+it **must** be implemented as a `list_iterator` member function.
+
+Implement overloads for `==` and `!=`.
 Consider 2 iterators equivalent if they both point to the same `list_node`.
+
+Equivalence overloads can be implemented as friends of the `list_iterator`
+or not as you prefer, but they should alway be non-member functions.
 
 ### 5. Refactor list to use iterator
 Add a public typedef for a `list_iterator` to your list.
@@ -79,7 +85,13 @@ This type should be named `iterator`.
 
 Add `constexpr` and non-const versions of `begin` and `end` functions.
 
-Make sure your functions return the `iterator` type.
+Make sure your functions return the `iterator` type
+and implement them in the `list` class.
+
+```cpp
+iterator begin() noexcept;
+iterator end() noexcept;
+```
 
 Refactor `insert_after`, replacing the integer positional parameter
 and return value with an iterator.
