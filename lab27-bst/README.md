@@ -46,7 +46,17 @@ in the tree.
 In both functions, if the value is not found, or if the tree is empty,
 then return the `nullptr`.
 
-### 2. Iterator Decrement
+### 2. Function `insert`
+Implement a `bstree` member function that inserts the value provided.
+
+Most of the work should be be done in the private helper:
+
+```cpp
+tree_node<T>* 
+insert (const T& value, tree_node<T>*& node, tree_node<T>* parent)
+```
+
+### 3. Iterator Decrement
 
 The tree iterator dereference and increment functions have already
 been implemented.
@@ -54,7 +64,7 @@ Knowing that the decrement operators must traverse the tree in the
 opposite direction from increment,
 implement overloads for **prefix** decrement and **postfix** decrement.
 
-### 3. Functions `begin` and `end`
+### 4. Functions `begin` and `end`
 In our earlier trees, we arbitrarily chose the root node
 as the begining and let the different traversals handle themselves.
 Now we have rules.
@@ -87,16 +97,6 @@ auto it = my_tree.find(21);
 
 The odds that `-9999` satisfies the binary search tree property are slim.
 
-
-### 4. Function `insert`
-Implement a `bstree` function that inserts the value provided.
-
-Most of the work should be be done in the private helper:
-
-```cpp
-tree_node<T>* 
-insert (const T& value, tree_node<T>*& node, tree_node<T>* parent)
-```
 
 ### 5. Function `erase`
 Implement a `bstree` function that erases the value provided.
