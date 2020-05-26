@@ -40,6 +40,7 @@ function(make_test name)
     target_link_libraries(${name} doctest)
   endif()
   add_test(NAME ${name} COMMAND ${name})
+  set_tests_properties(${name} PROPERTIES TIMEOUT 3)
 endfunction()
 
 
