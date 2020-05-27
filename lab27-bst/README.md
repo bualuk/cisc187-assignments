@@ -149,7 +149,7 @@ There are three cases to be considered:
 
 - Removing a node with two children
 
-Recursive algorith outline:
+Recursive algorithm outline:
 
 1. Check if the tree is null (base case). Do nothing.
 2. Search for the value to be removed.
