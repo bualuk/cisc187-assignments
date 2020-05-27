@@ -71,7 +71,7 @@ namespace mesa {
      * Delete an entire tree.
      */
     template <class T>
-      void erase(tree_node<T>*& root )
+      void erase(tree_node<T>*& )
       {
       }
 
@@ -80,7 +80,7 @@ namespace mesa {
      * Duplicates are overwritten with the new value.
      */
     template <class T>
-      void erase (const T& value, tree_node<T>*& root)
+      void erase (const T& , tree_node<T>*& )
       {
       }
 
@@ -93,7 +93,7 @@ namespace mesa {
      * @return nullptr otherwise
      */
     template <class T>
-      tree_node<T>* find (const T& value, tree_node<T>* root)
+      tree_node<T>* find (const T& , tree_node<T>* root)
       {
         return root; 
       }
@@ -133,7 +133,7 @@ namespace mesa {
 
 // write a tree to an output stream, infix
   template <class T>
-std::ostream& operator<< (std::ostream& os, const mesa::tree_node<T>* node)
+std::ostream& operator<< (std::ostream& os, const mesa::tree::tree_node<T>* node)
 {
   if (node == nullptr) return os;
   os << node->left; 
