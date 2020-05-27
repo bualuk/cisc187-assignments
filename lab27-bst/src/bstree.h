@@ -21,7 +21,7 @@ namespace mesa {
     typedef std::bidirectional_iterator_tag iterator_category;
 
     tree_iterator() = default;
-    tree_iterator(const tree_node<T>* n) 
+    tree_iterator(const tree::tree_node<T>* n) 
       : node{n} 
     { }
 
@@ -36,7 +36,7 @@ namespace mesa {
 
       if (node->right != nullptr) {
         // find the smallest node on the right subtree
-        node = mesa::min_element(node->right);
+        node = mesa::tree::min_element(node->right);
       } else {
         // finished with right subtree and there is no right
         // search up for first parent with a non-null right child
@@ -57,7 +57,7 @@ namespace mesa {
       return tmp;
     }
 
-    const tree_node<T>* node;
+    const tree::tree_node<T>* node;
      };
 
 } // end namespace mesa
@@ -86,16 +86,18 @@ namespace mesa {
         typedef T value_type;
         typedef const tree_iterator<T> const_iterator;
         typedef const_iterator iterator;
+        typedef const_iterator reverse_iterator;
+        typedef const_iterator const_reverse_iterator;
 
         bstree() = default;
         explicit
           bstree(const T& value)
-          : root{new tree_node<T>{value}}
+          : root{new tree::tree_node<T>{value}}
         { }
 
         // copy construct and assign
         bstree(const bstree& other) {
-          root = mesa::deep_copy(other.root);
+          root = mesa::tree::deep_copy(other.root);
         }
         bstree& operator=(const bstree& other) {
           bstree copy = other;
@@ -115,7 +117,7 @@ namespace mesa {
         }
 
         ~bstree() {
-          mesa::erase_tree(root);
+          mesa::tree::erase(root);
         }
 
         /**
@@ -126,7 +128,7 @@ namespace mesa {
         /**
          * Remove one value from a tree.
          */
-        void erase (const T& value) {
+        void erase (const T& ) {
         }
 
         constexpr
@@ -134,32 +136,32 @@ namespace mesa {
 
         bool contains(const T& value) const noexcept
         {
-          return mesa::contains (value, root);
+          return mesa::tree::contains (value, root);
         }
 
         /**
          * Find a value in tree
          */
-        const_iterator find(const T& value) const noexcept {
+        const_iterator find(const T& ) const noexcept {
           return const_iterator(nullptr); // stub
         }
 
         /**
          * Insert a new value in tree
          */
-        const_iterator insert(const T& value) {
+        const_iterator insert(const T& ) {
           return const_iterator(nullptr); // stub
         }
 
       private:
-        tree_node<T>* root = nullptr;
+        tree::tree_node<T>* root = nullptr;
 
         /**
          * Insert a new value in the tree.
          * Duplicates are overwritten with the new value.
          */
-        tree_node<T>* 
-          insert (const T& value, tree_node<T>*& node, tree_node<T>* parent)
+        tree::tree_node<T>* 
+          insert (const T& /* value */, tree::tree_node<T>*& node, tree::tree_node<T>* /* parent */)
           {
               return node;
           }

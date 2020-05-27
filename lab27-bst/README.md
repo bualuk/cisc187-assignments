@@ -71,11 +71,17 @@ Now we have rules.
 
 Implement `begin` so that the iterator points to the
 first element of the in order traversal.
-
 As always, function `end` should represent a position past the last element.
-
 Make sure your functions return the `const_iterator` type
 and implement them in the `bstree` class.
+
+In this container we will add a reverse iterator to match our
+iterator decrement operator.
+Implement `rbegin` so that the iterator points to the
+first element of the reversed set (the last element).
+As always, function `rend` should represent a position past the last element.
+For the reversed set, the iterstor must be 1 'past the beginning'.
+Make sure your functions return the `const_reverse_iterator` type.
 
 A subtle point to notice in the bstree class.
 Notice the definitions of iterator at the top of the bstree class:
