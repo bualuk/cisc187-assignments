@@ -7,17 +7,11 @@
 #include <doctest.h>
 #include "../src/bstree.h"
 
-SCENARIO( "Test bstree insert") {
+SCENARIO( "Test bstree decrement") {
 
   GIVEN ( "an empty tree" ) {
     mesa::bstree<int> test_tree;
     REQUIRE(test_tree.empty() == true);
-    WHEN (" a value is added" ) {
-      test_tree.insert(8);
-      THEN ( "it should exist in the tree" ) {
-        REQUIRE( test_tree.contains(8) == true);
-      }
-    }
 
     WHEN (" a root and a left added" ) {
       auto it1 = test_tree.insert(8);
@@ -32,8 +26,8 @@ SCENARIO( "Test bstree insert") {
       AND_THEN ( "the left child element should be the min" ) {
         CHECK( *it2 == 1);
       }
-      AND_THEN ( "incrementing the second (min) iterator should equal the first (root)" ) {
-        ++it2;
+      AND_THEN ( "decrementing the first (root) iterator should equal the second (min)" ) {
+        --it1;
         CHECK( *it1 == *it2);
       }
     }
@@ -51,8 +45,8 @@ SCENARIO( "Test bstree insert") {
       AND_THEN ( "the right child element should be the max" ) {
         CHECK( *it2 == 13);
       }
-      AND_THEN ( "incrementing the first iterator should equal the second" ) {
-        ++it1;
+      AND_THEN ( "decrementing the second iterator should equal the first" ) {
+        --it2;
         CHECK( *it1 == *it2);
       }
     }
@@ -70,11 +64,11 @@ SCENARIO( "Test bstree insert") {
       AND_THEN ( "the left child element should be the middle" ) {
         CHECK( *it3 == 3);
       }
-      AND_THEN ( "incrementing the min iterator should walk to root" ) {
-        ++it2;
-        CHECK( *it3 == *it2);
-        ++it2;
-        CHECK( *it1 == *it2);
+      AND_THEN ( "decrementing the root iterator should walk to min" ) {
+        --it1;
+        CHECK( *it3 == *it1);
+        --it1;
+        CHECK( *it2 == *it1);
       }
     }
 
@@ -93,24 +87,18 @@ SCENARIO( "Test bstree insert") {
       AND_THEN ( "the right-most child element should be max" ) {
         CHECK( *it5 == 14);
       }
-      AND_THEN ( "incrementing the min iterator should walk to max" ) {
-        ++it2;
-        CHECK( *it1 == *it2);
-        ++it2;
-        CHECK( *it3 == *it2);
-        ++it2;
-        CHECK( *it4 == *it2);
-        ++it2;
-        CHECK( *it5 == *it2);
+      AND_THEN ( "decrementing the max iterator should walk to min" ) {
+        --it5;
+        CHECK( *it4 == *it5);
+        --it5;
+        CHECK( *it3 == *it5);
+        --it5;
+        CHECK( *it1 == *it5);
+        --it5;
+        CHECK( *it2 == *it5);
       }
     }
 
   }
-
 }
-
-
-
-
-
 
