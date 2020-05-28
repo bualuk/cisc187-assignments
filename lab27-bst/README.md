@@ -89,7 +89,7 @@ iterator decrement operator.
 Implement `rbegin` so that the iterator points to the
 first element of the reversed set (the last element).
 As always, function `rend` should represent a position past the last element.
-For the reversed set, the iterstor must be 1 'past the beginning'.
+For the reversed set, the iterator must be 1 'past the beginning'.
 Make sure your functions return the `const_reverse_iterator` type.
 
 A subtle point to notice in the bstree class.
@@ -103,7 +103,7 @@ typedef const_iterator iterator;
 The `iterator` is defined as a `const_iterator`. Why?
 
 If we allow users to change tree values directly using the iterators
-provided, then it breaks the rukes of the tree. Consider:
+provided, then it breaks the rules of the tree. Consider:
 
 ```cpp
 auto it = my_tree.find(21);
