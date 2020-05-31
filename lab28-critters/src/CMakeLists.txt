@@ -32,7 +32,7 @@ if(NOT EXISTS "${PROJECT_BINARY_DIR}/lib${CMAKE_PROJECT_NAME}.a")
     STATUS DOWNLOAD_STATUS
     EXPECTED_HASH MD5=478ebbd9fc9af29aafb6e6ad86f52a67
     )
-  message(STATUS " doctest download status: ${DOWNLOAD_STATUS}")
+  message(STATUS " critters library download status: ${DOWNLOAD_STATUS}")
 endif()
 
 target_link_libraries(${PROJECT_NAME} PUBLIC 
