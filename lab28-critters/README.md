@@ -10,6 +10,25 @@ The whole idea is that the game is incomplete -
 you have to write the code to make
 the critters move, fight, mate, and eat.
 
+Besides a fun way to wrap up the term,
+this project also provides additional insight into why
+we separate interfaces from implementation.
+In this lab, you are provided the interfacces to the 4 things you
+need to interact completely in the game world, the two primary are:
+
+- critters.h
+- direction.h
+
+No other source code is needed.
+It is already compiled into a library which includes a `main()`
+function and all the capabilites you need.
+
+Your job is to focus on a winning critter.
+
+If you want to see the full source, you can on 
+[GitHub](https://github.com/DaveParillo/critters).
+
+## Basic gameplay
 Runs the critters (Rock, Paper, Scissors) competition using 'critters' as
 combatants. The combat occurs in a 2D grid 'world' with animals moving around.
 
@@ -22,7 +41,7 @@ run with -h command line argument to see what options are available.
 
 Refer to the
 [api docs](http://209.129.16.61/~dparillo/cisc187/critters/docs)
-to see what functions are available for critters.
+for more info and to see what functions are available for critters.
 
 If when running the program over an ssh connection, no colors appear,
 try changing your terminal settings.  On the command line, try:
