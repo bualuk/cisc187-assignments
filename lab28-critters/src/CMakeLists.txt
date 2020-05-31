@@ -4,7 +4,7 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 # The 'project name' is defined here
-project(critters-sandbox VERSION 1.0.0 LANGUAGES CXX)
+project(critters VERSION 1.0.0 LANGUAGES CXX)
 
 find_package(Curses REQUIRED)
 
@@ -20,6 +20,12 @@ add_executable(${PROJECT_NAME}
   olympian.cpp olympian.h # delete these files if not using them
 )
 
+#################################################################
+#
+#  Don't edit anything below this line
+#
+#################################################################
+
 if(NOT EXISTS "${PROJECT_BINARY_DIR}/lib${CMAKE_PROJECT_NAME}.a")
   file(DOWNLOAD http://209.129.16.61/~dparillo/cisc187/critters/libcritters-game.a
     "${PROJECT_BINARY_DIR}/lib${CMAKE_PROJECT_NAME}.a"
@@ -28,8 +34,6 @@ if(NOT EXISTS "${PROJECT_BINARY_DIR}/lib${CMAKE_PROJECT_NAME}.a")
     )
   message(STATUS " doctest download status: ${DOWNLOAD_STATUS}")
 endif()
-
-# add_library(${CMAKE_PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC 
   ${CURSES_LIBRARIES}
