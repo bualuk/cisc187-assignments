@@ -126,4 +126,3 @@ Critters compiles using cmake on Mac OS, GNU/linux, and cygwin with:
 Feel free to substitute you own cmake Generator.
 Typing `cmake -G` will show you a list of generators for your cmake.
 
-
