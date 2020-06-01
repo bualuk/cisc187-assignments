@@ -1,5 +1,4 @@
 # Critters
-
 This is a C++ version of a lab assignment originally offered
 as far as I can tell, first at Univerity of Washington
 School of Computer Science & Engineering, CSE 142: Computer Programming I.
@@ -13,11 +12,12 @@ the critters move, fight, mate, and eat.
 Besides a fun way to wrap up the term,
 this project also provides additional insight into why
 we separate interfaces from implementation.
-In this lab, you are provided the interfacces to the 4 things you
-need to interact completely in the game world, the two primary are:
+In this lab, you are provided the interfaces to the few things you
+need to interact completely in the game world, the main ones are:
 
-- critters.h
-- direction.h
+- `critters.h`
+- `direction.h`
+- `add_player.h` and `add_player.cpp`
 
 No other source code is needed.
 It is already compiled into a library which includes a `main()`
@@ -28,7 +28,7 @@ Your job is to focus on a winning critter.
 If you want to see the full source, you can on 
 [GitHub](https://github.com/DaveParillo/critters).
 
-## Basic gameplay
+# Basic gameplay
 Runs the critters (Rock, Paper, Scissors) competition using 'critters' as
 combatants. The combat occurs in a 2D grid 'world' with animals moving around.
 
@@ -37,7 +37,7 @@ The world size is determined by the console size when the program is started.
 The upper-left cell has coordinates (0, 0); 
 x increases to the right and y increases downward.
 
-run with -h command line argument to see what options are available.
+run with `-h` command line argument to see what options are available.
 
 Refer to the
 [api docs](http://209.129.16.61/~dparillo/cisc187/critters/docs)
@@ -46,25 +46,27 @@ for more info and to see what functions are available for critters.
 If when running the program over an ssh connection, no colors appear,
 try changing your terminal settings.  On the command line, try:
 
-    TERM="screen-256color"
+```
+TERM="screen-256color"
+```
 
-the ncurses view should display colors if the environment supports it.
+The ncurses view should display colors if the environment supports it.
 You may have to modify your putty settings if using ssh via putty.
-There are many sites that might help het putty settings correct,
-for example http://serverfault.com/questions/475925/how-to-fix-putty-showing-garbled-characters
+There are many sites that might help get the putty settings correct,
+for example 
+http://serverfault.com/questions/475925/how-to-fix-putty-showing-garbled-characters
 but in the Mesa environment things work if in the Window/Translation tab
 the character set is set to 'Use font encodings'.
 
-
 ## Movement
-On each round of the simulation, the simulator asks each critter object which 
-direction it wants to move. 
+During each game turn, 
+the game controller asks each critter object for a move direction. 
 Each round a critter can move one square in any of the 8 'cardinal' directions, 
-or stay at its current location.
+or stay at its current location (direction::CENTER).
 
 If a critter moves into an empty square, the critter takes no other action
 on that move.
-If a critter moves into an occupied square, this informs the simulator that the
+If a critter moves into an occupied square, this informs the game that the
 critter intends to take an action with the item in the destination cell.
 Examples of actions are fighting, mating, and eating.
 
@@ -72,7 +74,7 @@ The world has a finite size, but it wraps around in all four directions.
 For example, moving east from the eastern-most (i.e. right) edge brings you back 
 to the western-most (i.e. left) edge. 
 You might want your critters to make several moves at once using a loop, but you can't. 
-The only way a critter moves is to wait for the simulator to ask it for a 
+The only way a critter moves is to wait for the game to ask it for a 
 single move and return that move.
 
 ## Fighting
@@ -102,39 +104,49 @@ If the critters make the same choice, the result is a Draw.
 
 ## Mating
 If two animals of the same species collide, they "mate" to produce a baby. 
+Mating is optional - you are not obligated to move onto a critter of the same species.
 Critters are vulnerable to attack while mating: 
-any other species that attacks them wins automatically. 
-A critter can initiate mating only once during its lifetime.
+
+- Any other species that attacks them wins automatically. 
+- A critter can initiate mating only once during its lifetime.
+
+Mating has high risks, but also high rewards.
+Mating is the only way to add to your total critter count.
+Not only does that increase your score (assuming you survive parenting),
+but you also get a new helper to eat, kill, and mate.
 
 ## Eating
-There are pieces of food on the world initially, and new food slowly grows into the world over time. 
-As a critter moves, it may encounter food, in which case the simulator will ask your
+There is food on the world initially, and new food is added as consumed. 
+As a critter moves, it may encounter food, in which case the game will ask your
 critter whether it wants to eat it. 
+Eating is optional - even when moving onto food, you don't have to eat it.
+Eating always incurs a small risk - sleeping for at least 5 turns.
 If a critter overindulges, then that critter will be forced to 
-"sleep off" their gluttony for a small amount of time. 
-While asleep, critters cannot move, and if they are attacked, they will always lose.
+"sleep off" their gluttony for a larger amount of time. 
+While asleep, critters cannot move,
+and if they are attacked, they will always lose.
 Critters that choose to never eat will eventually die of starvation.
 
 ## Obstacles / Hazards
 Some items in the world are hazards and should be avoided.
 If a critter moves onto a Stone, for example, it is 'stunned' for a time.
-While stunned, a critter cannot move, and if they are attacked, they will always lose.
-Golden rule: don't walk into rocks.
+While stunned, a critter cannot move 
+and if they are attacked they will always lose.
+Simple rule: don't walk into rocks.
 
 ## Scoring
-The simulator keeps a score for each class (species) of critter, 
+The game keeps a score for each class (species) of critter, 
 shown on the top of the screen. 
 A species's score is based on how many animals of that class are alive, 
 how much food they have eaten, and how many other animals they have killed.
-
 
 # Compiling
 Requires cmake, a ISO C++14 compatible compiler, and the ncurses library.
 Currently Windows is not well supported.
 It is possible to compile on Windows under cygwin,
 a unix-like environment for windows.
-You'll need to install ncurses for cygwin and run the program
-within the cygwin bash shell.
+You'll need to install ncurses development libraries for cygwin
+and run the program within the cygwin bash shell.
 
 Critters compiles using cmake on Mac OS, GNU/linux, and cygwin with:
 
