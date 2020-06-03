@@ -25,7 +25,7 @@ modify them, and submit them for grading.
 3. Edit the [Academic integrity promise](integrity.md)
 
   - Fill in your name and
-  - Type an **x** in each checkbox area `[ ]`
+  - Replace the space in the square brackets with an **x** in each checkbox area `[ ]`
     - [x] if done correctly it should look like this
 
 4. Edit this file:
