@@ -50,7 +50,9 @@ modify them, and submit them for grading.
    - You may make other edits if you desire
    
 6. Commit your changes
-7. Run `vimtutor` and work through the entire tutorial
+
+## Step 3: Using `vim`
+Run `vimtutor` and work through the entire tutorial
 
 When you want to logout of the Mesa server, type `exit` at the command prompt.
 
