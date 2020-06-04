@@ -46,7 +46,9 @@ int main () {
 }
 ```
 
-What is the problem (if any)?
+What is the output?
+
+What is the problem (if any) and what needs to change to fix it?
 
 **Reading #2**
 
@@ -62,31 +64,12 @@ int main () {
   return 0;
 }
 ```
-What is the problem (if any)?
+
+What is the output?
+
+What is the problem (if any) and what needs to change to fix it?
 
 **Reading #3**
-
-```cpp
-#include <iostream>
-#include <string>
-
-int main () {
-  for (int i = 0; i < 9; ++i) {
-    int x = 5;
-    std::string pet = "Dog - ";
-    if (i < 3) {
-      ++x;
-    } else {
-      x += 2;
-    }
-  }
-  std::cout << pet << x << '\n';
-}
-```
-
-What is the problem (if any)?
-
-**Reading #4**
 
 ```cpp
 #include <iostream>
@@ -100,7 +83,9 @@ int main () {
 }
 ```
 
-What is the problem (if any)?
+What is the output?
+
+What is the problem (if any) and what needs to change to fix it?
 
 ## Expressions: 0.5 points, 30 minutes
 For each expression below, indicate if it compiles.
@@ -119,25 +104,15 @@ double x = 5 + 1/2.0;
 
 c.  
 ```cpp
-int y = 5 + 1/2.0;
+double x = 5 + 2^3;
 ```
 
 d.  
 ```cpp
-double x = 5 + (float)2/3.0;
-```
-
-e.  
-```cpp
-double x = 5 + 2^3;
-```
-
-f.  
-```cpp
 double x = (int) 5.0 << 1;
 ```
 
-g.  
+e.  
 ```cpp
 bool z = false;
 double x = 4 | (int)(!z);
@@ -147,11 +122,16 @@ double x = 4 | (int)(!z);
 Check your progress by running `make test` or `ctest -V`.
 
 - Add your new and modified source files: 
+  ```console
+  git add src README.md
   ```
-  git add src
-  git add README.md
+- Save your changes: 
+  ```console
+  git commit -m 'finish lab2'
   ```
-- Save your changes: `git commit -m 'finished lab2'`
-- Submit your work for grading: `git push`
+- Submit your work for grading: 
+  ```console
+  git push
+  ```
 
 
