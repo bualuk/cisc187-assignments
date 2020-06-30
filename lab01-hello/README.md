@@ -41,8 +41,8 @@ modify them, and submit them for grading.
 
 ## Step 2: Using Linux
 1. Login to your Mesa server account
-2. One the command prompt, run `setup-vim`
-3. Clone your cisc187 repo again, if you didn't clone it here in Step 1
+2. At the command prompt, run `setup-vim`
+3. Clone your cisc187 repo again, if you didn't clone it on the Mesa server in Step 1
 4. Build and run the unit test
 5. Edit src/main.cpp on buffy using `vi`
    
@@ -52,7 +52,8 @@ modify them, and submit them for grading.
 6. Commit your changes
 
 ## Step 3: Using `vim`
-Run `vimtutor` and work through the entire tutorial
+Run `vimtutor` and work through the entire tutorial.
+It should take about an hour.
 
 When you want to logout of the Mesa server, type `exit` at the command prompt.
 
