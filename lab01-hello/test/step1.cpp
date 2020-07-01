@@ -1,8 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#define DOCTEST_CONFIG_NO_POSIX_SIGNALS
 #include <string>
 #include <doctest.h>
-#include <howdy.h>
+#include <echo.h>
 
 SCENARIO( "echo something") {
   WHEN ("echo() is called") {

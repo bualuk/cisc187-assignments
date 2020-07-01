@@ -1,9 +1,8 @@
-cmake_minimum_required(VERSION 3.1...3.14) 
-if(${CMAKE_VERSION} VERSION_LESS 3.12)
-  cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
-endif()
-
+cmake_minimum_required(VERSION 3.12) 
 project(take-away VERSION 1.0.0 LANGUAGES CXX)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/../../cmake")
+include (prevent_source_builds)
+include (clang_tidy)
 
 # Uncomment this block if you plan to use my tests in your project
 # add_library(${CMAKE_PROJECT_NAME} 
