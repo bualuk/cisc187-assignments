@@ -4,9 +4,9 @@
 #include <string>
 
 /**
- * This function repeats what it is given.
+ * This function repeats what text is provided.
  */
-std::string echo(const std::string&);
+std::string echo(const std::string& text);
 
 #endif
 

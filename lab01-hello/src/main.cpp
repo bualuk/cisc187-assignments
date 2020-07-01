@@ -1,5 +1,5 @@
 #include <iostream>
-#include "howdy.h"
+#include "echo.h"
 
 int main() {
   std::cout << echo("Hello, world") << '\n';

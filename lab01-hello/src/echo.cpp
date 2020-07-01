@@ -1,6 +1,6 @@
 #include <string>
 
-#include "howdy.h"
+#include "echo.h"
 
 std::string echo(const std::string& text)
 {
