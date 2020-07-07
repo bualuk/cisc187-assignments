@@ -19,9 +19,25 @@ describe what [this function](src/change.cpp) is attempting to do:
 
 4. Did the actual output match your expectations?
 
+
+   What do you think the problem is?
+
+5. Run the example program in the 
+   [sign and magnitude](https://daveparillo.github.io/cisc187-reader/beginnings/types.rst)
+   section of course reader.
+
+   Compare the exponent and mantissa for the different values. See any patterns?
+
+   How might some representations create problems like the ones encountered in `test_change`?
+
+   Find at least 3 other values with troublesome floating point representations.
+
+6. How many more floating point numbers with approximate representations
+   do you think you could find, if you looked?
+
    What is the key programming 'lesson learned' here?
 
-5. Fix the code in `change.h` and `change.cpp` so that it passes the tests.
+7. Fix the code in `change.h` and `change.cpp` so that it passes the tests.
 
 ## Code reading: 1 point, 30 minutes *maximum*
 For each of the problems that follow,
@@ -29,7 +45,7 @@ describe the intended program output, if any, and
 whether the program compiles or not.
 
 If it doesn't compile or produces unintended output,
-what changes could be made to fix it?
+then describe what changes could be made to fix it?
 
 **Reading #1**
 
@@ -40,7 +56,7 @@ what changes could be made to fix it?
 int main () {
   const std::string dudes[4] = {"paco", "fred", "connor", "shoney"};
   for (int i = 0; i <= 4; ++i) {
-    std::cout << dudes[i] << std::endl;
+    std::cout << dudes[i] << '\n';
   }
   return 0;
 }
@@ -88,9 +104,18 @@ What is the output?
 What is the problem (if any) and what needs to change to fix it?
 
 ## Expressions: 0.5 points, 30 minutes
-For each expression below, indicate if it compiles.
-If yes, what is the result?
-If no, what's wrong?
+For each expression below, write the expression in plain english,
+for example:
+
+```cpp
+double x = 2 * (2+3);
+```
+
+*Add 2 and 3 and then multiply the result by 2.
+Assign the result to x.*
+
+If an operator appears unfamiliar to you, refer to
+http://en.cppreference.com/w/cpp/
 
 a.  
 ```cpp
@@ -114,8 +139,12 @@ double x = (int) 5.0 << 1;
 
 e.  
 ```cpp
-bool z = false;
-double x = 4 | (int)(!z);
+auto x = 5 & 2;
+```
+
+f.  
+```cpp
+auto x = 5 | 2;
 ```
 
 ## Turnitin
