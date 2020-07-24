@@ -49,7 +49,7 @@ from the two parameters `m` and `n`.
 
 When `m` > `n` > `0`, the following:
 
-  `a = m*m - n*n`
+  ![a = m^2 + n^2](https://latex.codecogs.com/svg.latex?a&space;=&space;m^{2}&space;-&space;n^{2})
 
   ![b = 2mn](https://latex.codecogs.com/svg.latex?b%20%3D%202mn)
 
@@ -93,7 +93,7 @@ To compute the area, first compute the semi-perimeter:
 Compute the area using the semi-perimeter:
 
 
-  ![a=sqrt{s(s-a)(s-b)(s-c)}](https://latex.codecogs.com/svg.latex?a%20%3D%20%5Csqrt%7Bs%20%5Cleft%20%28%20s-a%20%5Cright%20%29%20%5Cleft%20%28%20s-b%20%5Cright%20%29%20%5Cleft%20%28%20s-c%20%5Cright%20%29%7D)
+  ![a=sqrt{s(s-a)(s-b)(s-c)}](https://latex.codecogs.com/svg.latex?area=\sqrt{s\cdot\left(s-a\right)\cdot\left(s-b\right)\cdot\left(s-c\right)})
 
 If any side of the `trigon` is 0, then return 0 for the area.
 
