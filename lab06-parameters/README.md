@@ -54,8 +54,6 @@ When `m` > `n` > `0`, the following:
   ![b = 2mn](https://latex.codecogs.com/svg.latex?b%20%3D%202mn)
 
   ![c = m^2 + n^2](https://latex.codecogs.com/svg.latex?c%20%3D%20m%5E%7B2%7D%20&plus;%20n%5E%7B2%7D)
-  
-   ![c = m^2 + n^2](https://latex.codecogs.com/svg.latex?c%20%3D%20m%5E%7B2%7D%20&minus;%20n%5E%7B2%7D)
 
 will create a Pythagorean right triangle.
 
