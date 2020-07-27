@@ -122,3 +122,6 @@ for example, `ctest -R step2`.
 - Submit your work for grading: `git push`
 
 
+## Reflection
+When you are done, take a moment to 
+[rate this lab](https://forms.gle/eFAUKy54y98u4AxT6).
