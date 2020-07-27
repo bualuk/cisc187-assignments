@@ -1,4 +1,4 @@
-# Project #2b: Postfix Integer Calculator
+# Project #2: Postfix Integer Calculator
 The goal of this project is to create a simple calculator that can perform
 arithmetic operations on integers of (practically) unlimited size.
 
