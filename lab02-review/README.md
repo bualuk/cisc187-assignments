@@ -163,4 +163,6 @@ Check your progress by running `make test` or `ctest -V`.
   git push
   ```
 
+## Reflection
+When you are done, take a moment to [rate this lab](https://forms.gle/mysDh7AUxo1nBA8Y8).
 
