@@ -122,4 +122,8 @@ when running with default arguments.
 - Save your changes: `git commit . . .`
 - Submit your work for grading: `git push`
 
+## Reflection
+When you are done, take a moment to 
+[rate this lab](https://forms.gle/BRqfZsgapTvPdk159).
+
 
