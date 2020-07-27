@@ -44,6 +44,10 @@ make sure it meets all of the rubric criteria in order to get full credit.
    Don't allow users to break your game by entering invalid inputs.
 6. Your finished project must compile on buffy.
 
+## Reflection
+When you are **finished**, take a moment to 
+[rate this project](https://forms.gle/uGMkFTBKieq4YSrp7).
+
 ## Project Requirements
 In order to receive full credit, your project must satisfy **all**
 of the following requirements:
