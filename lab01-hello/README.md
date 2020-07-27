@@ -68,4 +68,5 @@ It should take about an hour.
 
 When you want to logout of the Mesa server, type `exit` at the command prompt.
 
-[Rate this lab](https://forms.gle/mGxgWw4DABPR3Hff9).
+## Reflection
+When you are done, take a moment to [rate this lab](https://forms.gle/mGxgWw4DABPR3Hff9).
