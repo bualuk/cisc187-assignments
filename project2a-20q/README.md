@@ -1,4 +1,4 @@
-# Project #2a: Twenty questions
+# Extra credit project: Twenty questions
 The goal of this project is to create a game called **twenty questions**
 that you play against the computer.
 
