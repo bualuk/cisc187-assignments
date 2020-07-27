@@ -157,4 +157,7 @@ for example, `ctest -R step2`.
 - Save your changes: `git commit . . . `
 - Submit your work for grading: `git push`
 
+## Reflection
+When you are done, take a moment to 
+[rate this lab](https://forms.gle/7Ju2oAxQsMHLuZTE6).
 
