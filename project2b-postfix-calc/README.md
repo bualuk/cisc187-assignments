@@ -24,6 +24,10 @@ make sure it meets all of the rubric criteria in order to get full credit.
 5. Project rubric requirements for correctness, clarity, design,
    and coding are met or exceeded.
 
+## Reflection
+When you are **finished**, take a moment to 
+[rate this project](https://forms.gle/uNtvPp78dJhSPMND6).
+
 ## Project Requirements
 In order to receive full credit, your project must satisfy **all**
 of the following requirements:
