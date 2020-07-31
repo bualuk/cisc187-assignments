@@ -61,6 +61,8 @@ make test
 These same steps work for MacOS X when using the default Unix Makefile generator.
 
 ### Visual Studio
+Using the GUI:
+
 These instructions work on campus.
 
 1. Create a directory named build and open CMake GUI.
@@ -68,7 +70,7 @@ These instructions work on campus.
    the root of all the lab source code.
 3. Select 'Browse Build' and select the `build` folder.
 4. In the lower left corner, select 'Configure' and
-   select 'Visual Studio 15 2017 Win64' from the list of
+   select 'Visual Studio 16 2019 Win64' from the list of
    available generators.
 
    Leave the remaining selections alone and
@@ -87,6 +89,47 @@ the instructions on the Microsoft site
 [here](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=vs-2017).
 
 Select the documentation for your version of Visual Studio.
+
+Using the Visual Studio command line:
+
+1. Create a directory named build.
+2. Open the Visual Studio Developer prompt.
+   `cd` into the build directory created in the previous step.
+3. Type `cmake ..`
+
+   This should create a standard Visual Studio solution that
+   you can run from the command line or the IDE.
+
+4. Type `MSBuild lab1.sln` to build all projects in the **Debug** configuation
+5. Type `ctest -C Debug` to run all tests
+
+
+To remove all executable files:
+
+```
+MSBuild lab1.sln -target:Clean
+MSBuild lab1.sln -t:Clean
+```
+
+To build a single test:
+
+```
+MSBuild lab1.sln -t:step1
+```
+
+To build all files in **Release** configuration,
+without any Debug symbols:
+
+```
+MSBuild lab1.sln -p:Configuration=Release
+# run tests
+ctest -C Release
+```
+
+If this doesn't work, try
+[the instructions on the Microsoft site]
+(https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2019)
+
 
 ### CodeBlocks
 1. Create a directory named build and open CMake GUI.
