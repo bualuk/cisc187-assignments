@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(lab16 VERSION 1.0.0 LANGUAGES CXX)
+project(lab18 VERSION 1.0.0 LANGUAGES CXX)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/../../cmake")
 include (prevent_source_builds)
 include (clang_tidy)
@@ -16,7 +16,7 @@ add_library(${PROJECT_NAME}
   RoboDog.cpp RoboDog.h
   Robot.h
   Wolf.cpp Wolf.h
-  lab16.cpp lab16.h
+  lab18.cpp lab18.h
 )
 add_executable(zoo main.cpp)
 
