@@ -6,6 +6,24 @@ The primary objective of this first lab is to review
 programming concepts from your first semester and
 to begin working with unit tests.
 
+This is a group assignment.
+Everyone will be organized into groups of 3 or 4 people.
+
+Before you start, complete the form below and assign a role to each member in your group. 
+If your group has 3 people, combine the Speaker and Reflector roles.
+
+Everyone should perform all of these steps individually in order to familiarize 
+yourself with the basics, but you are free to help eachother as you go.
+
+The work submitted by the **Recorder** will be graded for the entire team.
+
+| Team Role | Team Member|
+------------- | -------------
+**Recorder:** records all answers & questions and provides to instructor.  | (name)
+**Speaker:** talks to instructor.  | (name)
+**Manager:** keeps track of time and ensures everyone contributes appropriately. | (name)
+**Questioner:** question actions and decisions made by the team. | (name)
+
 ## Making Change: 2.5 points, 30 minutes *maximum*
 1. In your own words, without simply rewriting the code as plain text,
 describe what [this function](src/change.cpp) is attempting to do:
