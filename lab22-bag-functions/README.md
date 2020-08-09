@@ -1,7 +1,7 @@
 # Bag class functions
 
 The goal of this lab is to continue creating a user defined
-class template that encapulates data storage that can grow
+class template that encapsulates data storage that can grow
 and shrink dynamically.
 
 In this lab we will actually implement the functions 
