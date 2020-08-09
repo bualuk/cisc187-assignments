@@ -4,7 +4,7 @@ The goal of this lab is to continue creating a user defined
 class template that encapulates data storage that can grow
 and shrink dynamically.
 
-I this lab we will actually implement the functions 
+In this lab we will actually implement the functions 
 that allow a bag to change size dynamically.
 
 ## Steps
